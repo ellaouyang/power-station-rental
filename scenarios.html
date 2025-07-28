@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Browse by Scenario - OffGridMate Power Station Rental</title>
+
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
+		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+
+		<!-- nouislider -->
+		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+		<style>
+			.scenario-section {
+				padding: 60px 0;
+				background: #f8f9fa;
+			}
+			
+			.scenario-card {
+				background: white;
+				border-radius: 15px;
+				padding: 30px;
+				margin-bottom: 30px;
+				box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+				transition: transform 0.3s ease;
+			}
+			
+			.scenario-card:hover {
+				transform: translateY(-5px);
+			}
+			
+			.scenario-title {
+				font-size: 2rem;
+				font-weight: 700;
+				color: #D10024;
+				margin-bottom: 20px;
+				text-align: center;
+			}
+			
+			.user-type {
+				background: #e9ecef;
+				padding: 15px;
+				border-radius: 10px;
+				margin-bottom: 20px;
+			}
+			
+			.user-type h4 {
+				color: #495057;
+				font-weight: 600;
+				margin-bottom: 10px;
+			}
+			
+			.equipment-section {
+				margin-bottom: 25px;
+			}
+			
+			.equipment-section h5 {
+				color: #D10024;
+				font-weight: 600;
+				margin-bottom: 15px;
+			}
+			
+			.package-card {
+				background: #f8f9fa;
+				border: 2px solid #dee2e6;
+				border-radius: 10px;
+				padding: 20px;
+				margin-bottom: 15px;
+			}
+			
+			.package-title {
+				font-weight: 700;
+				color: #495057;
+				margin-bottom: 10px;
+			}
+			
+			.price {
+				font-size: 1.2rem;
+				font-weight: 700;
+				color: #D10024;
+			}
+			
+			.individual-item {
+				background: white;
+				border: 1px solid #dee2e6;
+				border-radius: 8px;
+				padding: 15px;
+				margin-bottom: 10px;
+			}
+			
+			.item-name {
+				font-weight: 600;
+				color: #495057;
+			}
+			
+			.item-price {
+				color: #D10024;
+				font-weight: 600;
+			}
+			
+			.deposit-note {
+				background: #fff3cd;
+				border: 1px solid #ffeaa7;
+				border-radius: 5px;
+				padding: 10px;
+				margin-top: 10px;
+				font-size: 0.9rem;
+				color: #856404;
+			}
+			
+			.weight-info {
+				background: #d1ecf1;
+				border: 1px solid #bee5eb;
+				border-radius: 5px;
+				padding: 10px;
+				margin-top: 10px;
+				font-size: 0.9rem;
+				color: #0c5460;
+			}
+
+			/* Slider Styles */
+			.products-slider {
+				position: relative;
+				margin: 0 -10px;
+			}
+
+			.product-slide {
+				padding: 0 10px;
+			}
+
+			.product-slide .product {
+				margin-bottom: 0;
+			}
+
+			/* Slick Slider Custom Styles */
+			.products-slider .slick-prev,
+			.products-slider .slick-next {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				z-index: 10;
+				width: 40px;
+				height: 40px;
+				background: #D10024;
+				border: none;
+				border-radius: 50%;
+				color: white;
+				font-size: 18px;
+				cursor: pointer;
+				transition: all 0.3s ease;
+			}
+
+			.products-slider .slick-prev {
+				left: -20px;
+			}
+
+			.products-slider .slick-next {
+				right: -20px;
+			}
+
+			.products-slider .slick-prev:hover,
+			.products-slider .slick-next:hover {
+				background: #b3001a;
+				transform: translateY(-50%) scale(1.1);
+			}
+
+			/* Hide default Slick arrows */
+			.products-slider .slick-arrow {
+				display: none !important;
+			}
+
+			/* Show only our custom arrows */
+			.products-slider .slick-prev,
+			.products-slider .slick-next {
+				display: block !important;
+			}
+
+			.products-slider .slick-dots {
+				bottom: -30px;
+			}
+
+			.products-slider .slick-dots li button:before {
+				color: #D10024;
+			}
+
+			.products-slider .slick-dots li.slick-active button:before {
+				color: #D10024;
+			}
+
+			/* Responsive adjustments */
+			@media (max-width: 768px) {
+				.products-slider .slick-prev {
+					left: -10px;
+				}
+
+				.products-slider .slick-next {
+					right: -10px;
+				}
+
+				.products-slider .slick-prev,
+				.products-slider .slick-next {
+					width: 35px;
+					height: 35px;
+					font-size: 16px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- HEADER -->
+		<header>
+			<!-- TOP HEADER -->
+			<div id="top-header">
+				<div class="container">
+					<ul class="header-links pull-left">
+						<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- /TOP HEADER -->
+
+			<!-- MAIN HEADER -->
+			<div id="header">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="header-logo">
+								<a href="index.html" class="logo">
+									<span style="color: #fff; font-size: 32px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">ECOFLOW</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /MAIN HEADER -->
+		</header>
+		<!-- /HEADER -->
+
+		<!-- BREADCRUMB -->
+		<div id="breadcrumb" class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="breadcrumb-tree">
+							<li><a href="index.html">Home</a></li>
+							<li class="active">Browse by Scenario</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /BREADCRUMB -->
+
+		<!-- SCENARIOS SECTION -->
+		<div class="scenario-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="text-center" style="margin-bottom: 50px; color: #D10024; font-weight: 700;">Choose Your Equipment Package by Scenario</h2>
+					</div>
+				</div>
+
+				<!-- Short Distance Leisure Camping -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="scenario-card">
+							<h3 class="scenario-title">Short Distance Leisure Camping</h3>
+							
+							<div class="user-type">
+								<h4>🔹 Typical Users:</h4>
+								<p>Weekend short-distance camping, only setting up tents at campsites or by the car</p>
+							</div>
+
+							<div class="equipment-section">
+								<h5>🔹 Main Equipment:</h5>
+								<p>Phone, camera, laptop charging, 240V general lighting, electric blanket</p>
+							</div>
+
+							<!-- Package Combinations -->
+							<div class="row" style="margin-bottom: 30px;">
+								<div class="col-md-12">
+									<h4 style="color: #D10024; font-weight: 600; margin-bottom: 20px;">📦 Recommended Packages</h4>
+								</div>
+								
+								<!-- Package 1 -->
+								<div class="col-md-6">
+									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #D10024;">
+										<div class="package-title" style="color: #D10024; font-size: 18px;">Basic Package</div>
+										<div style="margin-bottom: 15px;">
+											<p><strong>River Max 500wh</strong> - AC Max 500W Output</p>
+											<p><strong>110W Foldable Solar Panel</strong></p>
+										</div>
+										
+										<div class="package-title">Package Prices:</div>
+										<div class="price">3 Days: $65</div>
+										<div class="price">1 Week: $99</div>
+										<div class="price">1 Month: $150</div>
+										
+										<div class="package-title">Individual Prices:</div>
+										<div class="individual-item">
+											<span class="item-name">River Max</span>
+											<span class="item-price">$28/day</span>
+										</div>
+										<div class="individual-item">
+											<span class="item-name">110W Solar Panel</span>
+											<span class="item-price">$10/day</span>
+										</div>
+									</div>
+								</div>
+
+								<!-- Package 2 -->
+								<div class="col-md-6">
+									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #28a745;">
+										<div class="package-title" style="color: #28a745; font-size: 18px;">Premium Package</div>
+										<div style="margin-bottom: 15px;">
+											<p><strong>Delta 900wh</strong> - AC Max 1400W Output</p>
+											<p><strong>160W Foldable Solar Panel</strong></p>
+										</div>
+										
+										<div class="package-title">Package Prices:</div>
+										<div class="price">3 Days: $89</div>
+										<div class="price">1 Week: $150</div>
+										<div class="price">1 Month: $265</div>
+										
+										<div class="package-title">Individual Prices:</div>
+										<div class="individual-item">
+											<span class="item-name">Delta</span>
+											<span class="item-price">$39/day</span>
+										</div>
+										<div class="individual-item">
+											<span class="item-name">160W Solar Panel</span>
+											<span class="item-price">$12/day</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Individual Products -->
+							<div class="row">
+								<div class="col-md-12">
+									<h4 style="color: #D10024; font-weight: 600; margin-bottom: 20px;">🔧 Individual Products</h4>
+								</div>
+								
+								<div class="col-md-12">
+									<div class="products-slider">
+										<!-- River Max -->
+										<div class="product-slide">
+											<div class="product">
+												<div class="product-img">
+													<a href="product.html?id=1"><img src="./img/product01.png" alt="River Max"></a>
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="product.html?id=1">River Max 500wh</a></h3>
+													<h4 class="product-price">$28/day</h4>
+													<p style="font-size: 12px; color: #666;">Weight: 7.7kg | AC Max 500W Output</p>
+												</div>
+											</div>
+										</div>
+
+										<!-- 110W Solar Panel -->
+										<div class="product-slide">
+											<div class="product">
+												<div class="product-img">
+													<a href="product.html?id=4"><img src="./img/product04.png" alt="110W Solar Panel"></a>
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="product.html?id=4">110W Foldable Solar Panel</a></h3>
+													<h4 class="product-price">$10/day</h4>
+													<p style="font-size: 12px; color: #666;">Weight: 3.8kg | Portable Design</p>
+												</div>
+											</div>
+										</div>
+
+										<!-- Delta -->
+										<div class="product-slide">
+											<div class="product">
+												<div class="product-img">
+													<a href="product.html?id=2"><img src="./img/product02.png" alt="Delta"></a>
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="product.html?id=2">Delta 900wh</a></h3>
+													<h4 class="product-price">$39/day</h4>
+													<p style="font-size: 12px; color: #666;">Weight: 14kg | AC Max 1400W Output</p>
+												</div>
+											</div>
+										</div>
+
+										<!-- 160W Solar Panel -->
+										<div class="product-slide">
+											<div class="product">
+												<div class="product-img">
+													<a href="product.html?id=5"><img src="./img/product05.png" alt="160W Solar Panel"></a>
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="product.html?id=5">160W Foldable Solar Panel</a></h3>
+													<h4 class="product-price">$12/day</h4>
+													<p style="font-size: 12px; color: #666;">Weight: 5.6kg | High Efficiency</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Typical Outdoor Camping -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="scenario-card">
+							<h3 class="scenario-title">Typical Outdoor Camping</h3>
+							
+							<div class="user-type">
+								<h4>🔹 Typical Users:</h4>
+								<p>Camping for 2+ nights, group activities, extended activities (photography, cooking, watching movies)</p>
+							</div>
+
+							<div class="equipment-section">
+								<h5>🔹 Main Equipment:</h5>
+								<p>Device charging & 240V general lighting, electric blanket, induction cooker, outdoor refrigerator (quick ice making)</p>
+							</div>
+
+							<!-- Package Combinations -->
+							<div class="row" style="margin-bottom: 30px;">
+								<div class="col-md-12">
+									<h4 style="color: #D10024; font-weight: 600; margin-bottom: 20px;">📦 Recommended Packages</h4>
+								</div>
+								
+								<!-- Package 1 -->
+								<div class="col-md-6">
+									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #D10024;">
+										<div class="package-title" style="color: #D10024; font-size: 18px;">Standard Package</div>
+										<div style="margin-bottom: 15px;">
+											<p><strong>Delta 900wh</strong> - AC Max 1400W Output</p>
+											<p><strong>160W Foldable Solar Panel</strong></p>
+											<p><strong>Glacier Outdoor Refrigerator + Battery</strong></p>
+										</div>
+										
+										<div class="package-title">Package Prices:</div>
+										<div class="price">3 Days: $119</div>
+										<div class="price">1 Week: $189</div>
+										<div class="price">1 Month: $395</div>
+										
+										<div class="package-title">Individual Prices:</div>
+										<div class="individual-item">
+											<span class="item-name">Delta</span>
+											<span class="item-price">$39/day</span>
+										</div>
+										<div class="individual-item">
+											<span class="item-name">160W Solar Panel</span>
+											<span class="item-price">$12/day</span>
+										</div>
+										<div class="individual-item">
+											<span class="item-name">Glacier Refrigerator</span>
+											<span class="item-price">$20/day</span>
+										</div>
+									</div>
+								</div>
+
+								<!-- Package 2 -->
+								<div class="col-md-6">
+									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #28a745;">
+										<div class="package-title" style="color: #28a745; font-size: 18px;">Premium Package</div>
+										<div style="margin-bottom: 15px;">
+											<p><strong>Delta Max 1800wh</strong> - AC Max 2200W Output</p>
+											<p><strong>220W Foldable Solar Panel</strong></p>
+											<p><strong>Glacier Outdoor Refrigerator + Battery</strong></p>
+										</div>
+										
+										<div class="deposit-note">High-value equipment, $800 deposit required</div>
+										
+										<div class="package-title">Package Prices:</div>
+										<div class="price">3 Days: $169</div>
+										<div class="price">1 Week: $265</div>
+										<div class="price">1 Month: $595</div>
+										
+										<div class="package-title">Individual Prices:</div>
+										<div class="individual-item">
+											<span class="item-name">Delta Max</span>
+											<span class="item-price">$49/day</span>
+										</div>
+										<div class="individual-item">
+											<span class="item-name">220W Solar Panel</span>
+											<span class="item-price">$18/day</span>
+										</div>
+										<div class="individual-item">
+											<span class="item-name">Glacier Refrigerator</span>
+											<span class="item-price">$20/day</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Individual Products -->
+							<div class="row">
+								<div class="col-md-12">
+									<h4 style="color: #D10024; font-weight: 600; margin-bottom: 20px;">🔧 Individual Products</h4>
+								</div>
+								
+								<div class="col-md-12">
+									<div class="products-slider">
+										<!-- Delta -->
+										<div class="product-slide">
+											<div class="product">
+												<div class="product-img">
+													<a href="product.html?id=2"><img src="./img/product02.png" alt="Delta"></a>
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="product.html?id=2">Delta 900wh</a></h3>
+													<h4 class="product-price">$39/day</h4>
+													<p style="font-size: 12px; color: #666;">Weight: 14kg | AC Max 1400W Output</p>
+												</div>
+											</div>
+										</div>
+
+										<!-- 160W Solar Panel -->
+										<div class="product-slide">
+											<div class="product">
+												<div class="product-img">
+													<a href="product.html?id=5"><img src="./img/product05.png" alt="160W Solar Panel"></a>
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="product.html?id=5">160W Foldable Solar Panel</a></h3>
+													<h4 class="product-price">$12/day</h4>
+													<p style="font-size: 12px; color: #666;">Weight: 5.6kg | High Efficiency</p>
+												</div>
+											</div>
+										</div>
+
+										<!-- Glacier Refrigerator -->
+										<div class="product-slide">
+											<div class="product">
+												<div class="product-img">
+													<a href="product.html?id=8"><img src="./img/product08.png" alt="Glacier Refrigerator"></a>
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="product.html?id=8">Glacier Outdoor Refrigerator + Battery</a></h3>
+													<h4 class="product-price">$20/day</h4>
+													<p style="font-size: 12px; color: #666;">Weight: 24.17kg + 1.9kg | Quick Ice Making</p>
+												</div>
+											</div>
+										</div>
+
+										<!-- Delta Max -->
+										<div class="product-slide">
+											<div class="product">
+												<div class="product-img">
+													<a href="product.html?id=3"><img src="./img/product03.png" alt="Delta Max"></a>
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="product.html?id=3">Delta Max 1800wh</a></h3>
+													<h4 class="product-price">$49/day</h4>
+													<p style="font-size: 12px; color: #666;">Weight: 21.5kg | AC Max 2200W Output</p>
+												</div>
+											</div>
+										</div>
+
+										<!-- 220W Solar Panel -->
+										<div class="product-slide">
+											<div class="product">
+												<div class="product-img">
+													<a href="product.html?id=6"><img src="./img/product06.png" alt="220W Solar Panel"></a>
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="product.html?id=6">220W Foldable Solar Panel</a></h3>
+													<h4 class="product-price">$18/day</h4>
+													<p style="font-size: 12px; color: #666;">Weight: 9.5kg | High Power Charging</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Heavy Users -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="scenario-card">
+							<h3 class="scenario-title">Heavy Users (Remote Off-road/Camping Enthusiasts/RV Owners)</h3>
+							
+							<div class="user-type">
+								<h4>🔹 Typical Users:</h4>
+								<p>RV owners, off-road enthusiasts, camping for 3+ days, far from campsites (no power points), using multiple electrical devices</p>
+							</div>
+
+							<div class="equipment-section">
+								<h5>🔹 Main Equipment:</h5>
+								<p>Device charging & 240V general lighting, electric blanket, induction cooker, outdoor refrigerator, outdoor air conditioner</p>
+							</div>
+
+							<!-- Package Combinations -->
+							<div class="row" style="margin-bottom: 30px;">
+								<div class="col-md-12">
+									<h4 style="color: #D10024; font-weight: 600; margin-bottom: 20px;">📦 Recommended Packages</h4>
+								</div>
+								
+								<!-- Package 1 -->
+								<div class="col-md-4">
+									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #D10024;">
+										<div class="package-title" style="color: #D10024; font-size: 18px;">Solar Package</div>
+										<div style="margin-bottom: 15px;">
+											<p><strong>Delta Max 1800wh</strong> - AC Max 2200W Output</p>
+											<p><strong>400W Foldable Solar Panel</strong></p>
+											<p><strong>Glacier Outdoor Refrigerator + Battery</strong></p>
+											<p><strong>Wave Outdoor Air Conditioner + Battery</strong></p>
+										</div>
+										
+										<div class="deposit-note">High-value equipment, $1000 deposit required</div>
+										
+										<div class="package-title">Package Prices:</div>
+										<div class="price">3 Days: $199</div>
+										<div class="price">1 Week: $355</div>
+										<div class="price">1 Month: $795</div>
+										
+										<div class="package-title">Individual Prices:</div>
+										<div class="individual-item">
+											<span class="item-name">Delta Max</span>
+											<span class="item-price">$49/day</span>
+										</div>
+										<div class="individual-item">
+											<span class="item-name">400W Solar Panel</span>
+											<span class="item-price">$20/day</span>
+										</div>
+										<div class="individual-item">
+											<span class="item-name">Glacier Refrigerator</span>
+											<span class="item-price">$20/day</span>
+										</div>
+										<div class="individual-item">
+											<span class="item-name">Wave Air Conditioner</span>
+											<span class="item-price">$20/day</span>
+										</div>
+									</div>
+								</div>
+
+								<!-- Package 2 -->
+								<div class="col-md-4">
+									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #28a745;">
+										<div class="package-title" style="color: #28a745; font-size: 18px;">Generator Package</div>
+										<div style="margin-bottom: 15px;">
+											<p><strong>Delta Max 1800wh</strong> - AC Max 2200W Output</p>
+											<p><strong>1700W Gasoline Generator</strong></p>
+											<p><strong>Glacier Outdoor Refrigerator + Battery</strong></p>
+											<p><strong>Wave Outdoor Air Conditioner + Battery</strong></p>
+										</div>
+										
+										<div class="deposit-note">High-value equipment, $1200 deposit required</div>
+										
+										<div class="package-title">Package Prices:</div>
+										<div class="price">3 Days: ¥199</div>
+										<div class="price">1 Week: ¥355</div>
+										<div class="price">1 Month: ¥795</div>
+										
+										<div class="package-title">Individual Prices:</div>
+										<div class="individual-item">
+											<span class="item-name">Delta Max</span>
+											<span class="item-price">¥49/day</span>
+										</div>
+										<div class="individual-item">
+											<span class="item-name">Generator</span>
+											<span class="item-price">¥20/day</span>
+										</div>
+										<div class="individual-item">
+											<span class="item-name">Glacier Refrigerator</span>
+											<span class="item-price">¥20/day</span>
+										</div>
+										<div class="individual-item">
+											<span class="item-name">Wave Air Conditioner</span>
+											<span class="item-price">¥20/day</span>
+										</div>
+									</div>
+								</div>
+
+								<!-- Package 3 -->
+								<div class="col-md-4">
+									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #007bff;">
+										<div class="package-title" style="color: #007bff; font-size: 18px;">Ultimate Package</div>
+										<div style="margin-bottom: 15px;">
+											<p><strong>Delta Max 1800wh</strong> - AC Max 2200W Output</p>
+											<p><strong>Delta Max Extension Battery 2000wh</strong></p>
+											<p><strong>1700W Gasoline Generator</strong></p>
+											<p><strong>Glacier Outdoor Refrigerator + Battery</strong></p>
+											<p><strong>Wave Outdoor Air Conditioner + Battery</strong></p>
+										</div>
+										
+										<div class="deposit-note">High-value equipment, $1500 deposit required</div>
+										
+										<div class="package-title">Package Prices:</div>
+										<div class="price">3 Days: $249</div>
+										<div class="price">1 Week: $425</div>
+										<div class="price">1 Month: $995</div>
+										
+										<div class="package-title">Individual Prices:</div>
+										<div class="individual-item">
+											<span class="item-name">Delta Max + Extension</span>
+											<span class="item-price">$69/day</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Individual Products -->
+							<div class="row">
+								<div class="col-md-12">
+									<h4 style="color: #D10024; font-weight: 600; margin-bottom: 20px;">🔧 Individual Products</h4>
+								</div>
+								
+								<div class="col-md-12">
+									<div class="products-slider">
+										<!-- Delta Max -->
+										<div class="product-slide">
+											<div class="product">
+												<div class="product-img">
+													<a href="product.html?id=3"><img src="./img/product03.png" alt="Delta Max"></a>
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="product.html?id=3">Delta Max 1800wh</a></h3>
+													<h4 class="product-price">$49/day</h4>
+													<p style="font-size: 12px; color: #666;">Weight: 21.5kg | AC Max 2200W Output</p>
+												</div>
+											</div>
+										</div>
+
+										<!-- 400W Solar Panel -->
+										<div class="product-slide">
+											<div class="product">
+												<div class="product-img">
+													<a href="product.html?id=7"><img src="./img/product07.png" alt="400W Solar Panel"></a>
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="product.html?id=7">400W Foldable Solar Panel</a></h3>
+													<h4 class="product-price">$20/day</h4>
+													<p style="font-size: 12px; color: #666;">Weight: 16kg | Ultra High Power</p>
+												</div>
+											</div>
+										</div>
+
+										<!-- Wave Air Conditioner -->
+										<div class="product-slide">
+											<div class="product">
+												<div class="product-img">
+													<a href="product.html?id=9"><img src="./img/product09.png" alt="Wave Air Conditioner"></a>
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="product.html?id=9">Wave Outdoor Air Conditioner + Battery</a></h3>
+													<h4 class="product-price">$20/day</h4>
+													<p style="font-size: 12px; color: #666;">Weight: 17.55kg + 7.9kg | 4-6 Hours Usage</p>
+												</div>
+											</div>
+										</div>
+
+										<!-- Generator -->
+										<div class="product-slide">
+											<div class="product">
+												<div class="product-img">
+													<a href="product.html?id=10"><img src="./img/product01.png" alt="Generator"></a>
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="product.html?id=10">1700W Gasoline Generator</a></h3>
+													<h4 class="product-price">$20/day</h4>
+													<p style="font-size: 12px; color: #666;">Weight: 29.3kg | High Power Generation</p>
+												</div>
+											</div>
+										</div>
+
+										<!-- Delta Max Extension Battery -->
+										<div class="product-slide">
+											<div class="product">
+												<div class="product-img">
+													<a href="product.html?id=11"><img src="./img/product02.png" alt="Delta Max Extension"></a>
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="product.html?id=11">Delta Max Extension Battery 2000wh</a></h3>
+													<h4 class="product-price">$69/day</h4>
+													<p style="font-size: 12px; color: #666;">Weight: TBD | Ultra High Capacity</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Large Outdoor Events -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="scenario-card">
+							<h3 class="scenario-title">Large Outdoor Events</h3>
+							
+							<div class="user-type">
+								<h4>🔹 Typical Users:</h4>
+								<p>Large outdoor events lighting and sound systems</p>
+							</div>
+
+							<div class="equipment-section">
+								<h5>🔹 Custom Services:</h5>
+								<p>Please contact us for custom equipment based on your power requirements and device specifications.</p>
+								<p>For custom equipment package rentals, please email us for quotes.</p>
+								<p>Please provide total power requirements, equipment combinations needed, and rental period in your email.</p>
+							</div>
+
+							<!-- Package Combinations -->
+							<div class="row" style="margin-bottom: 30px;">
+								<div class="col-md-12">
+									<h4 style="color: #D10024; font-weight: 600; margin-bottom: 20px;">📦 Custom Packages</h4>
+								</div>
+								
+								<!-- Custom Package -->
+								<div class="col-md-6">
+									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #D10024;">
+										<div class="package-title" style="color: #D10024; font-size: 18px;">Custom Event Package</div>
+										<div style="margin-bottom: 15px;">
+											<p><strong>Custom equipment combinations based on your power requirements</strong></p>
+											<p><strong>Professional lighting and sound systems</strong></p>
+											<p><strong>High-capacity power solutions</strong></p>
+										</div>
+										
+										<div class="package-title">Contact Us For:</div>
+										<div class="individual-item">
+											<span class="item-name">Custom Quotes</span>
+											<span class="item-price">Email Required</span>
+										</div>
+										<div class="individual-item">
+											<span class="item-name">Power Requirements</span>
+											<span class="item-price">Specify Needs</span>
+										</div>
+										<div class="individual-item">
+											<span class="item-name">Rental Period</span>
+											<span class="item-price">Flexible Terms</span>
+										</div>
+									</div>
+								</div>
+
+								<!-- Experience Package -->
+								<div class="col-md-6">
+									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #28a745;">
+										<div class="package-title" style="color: #28a745; font-size: 18px;">Experience Package</div>
+										<div style="margin-bottom: 15px;">
+											<p><strong>River Max 500wh</strong> - Perfect for small events</p>
+											<p><strong>Basic power station experience</strong></p>
+											<p><strong>Ideal for testing our services</strong></p>
+										</div>
+										
+										<div class="package-title">Package Price:</div>
+										<div class="price">$28/day</div>
+										
+										<div class="package-title">What's Included:</div>
+										<div class="individual-item">
+											<span class="item-name">River Max 500wh</span>
+											<span class="item-price">$28/day</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Individual Products -->
+							<div class="row">
+								<div class="col-md-12">
+									<h4 style="color: #D10024; font-weight: 600; margin-bottom: 20px;">🔧 Individual Products</h4>
+								</div>
+								
+								<div class="col-md-12">
+									<div class="products-slider">
+										<!-- River Max Experience -->
+										<div class="product-slide">
+											<div class="product">
+												<div class="product-img">
+													<a href="product.html?id=1"><img src="./img/product01.png" alt="River Max"></a>
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="product.html?id=1">River Max 500wh</a></h3>
+													<h4 class="product-price">$28/day</h4>
+													<p style="font-size: 12px; color: #666;">Weight: 7.7kg | AC Max 500W Output</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+		<!-- /SCENARIOS SECTION -->
+
+		<!-- FOOTER -->
+		<footer id="footer">
+			<div class="section" style="background:#222;color:#fff;padding:32px 0 0 0;">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-xs-12" style="margin-bottom:24px;">
+							<h4 style="color:#fff;font-weight:700;">About Us</h4>
+							<p style="color:#ccc;">We provide high-quality power station rental services for outdoor enthusiasts, ensuring your adventure is always powered up.</p>
+						</div>
+						<div class="col-md-4 col-xs-12" style="margin-bottom:24px;">
+							<h4 style="color:#fff;font-weight:700;">Contact</h4>
+							<ul style="list-style:none;padding:0;color:#ccc;">
+								<li><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</li>
+								<li><i class="fa fa-phone"></i> +021-95-51-84</li>
+								<li><i class="fa fa-envelope-o"></i> email@email.com</li>
+							</ul>
+						</div>
+						<div class="col-md-4 col-xs-12">
+							<h4 style="color:#fff;font-weight:700;">Terms & Conditions</h4>
+							<ul style="color:#ccc;padding-left:18px;">
+								<li>Renter must be 18+ and provide valid ID</li>
+								<li>Equipment for personal use only</li>
+								<li>In-store pickup and payment</li>
+								<li>Equipment must be returned in good condition</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row" style="margin-top:24px;">
+						<div class="col-md-12 text-center">
+							<span class="copyright" style="color:#bbb;">
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | ECOFLOW
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- /FOOTER -->
+
+		<!-- jQuery Plugins -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/slick.min.js"></script>
+		<script type="text/javascript" src="js/nouislider.min.js"></script>
+		<script type="text/javascript" src="js/jquery.zoom.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				// Initialize product sliders
+				$('.products-slider').slick({
+					dots: true,
+					infinite: true,
+					speed: 300,
+					slidesToShow: 4,
+					slidesToScroll: 1,
+					autoplay: false,
+					arrows: true,
+					prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+					nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+					responsive: [
+						{
+							breakpoint: 1200,
+							settings: {
+								slidesToShow: 3,
+								slidesToScroll: 1
+							}
+						},
+						{
+							breakpoint: 992,
+							settings: {
+								slidesToShow: 2,
+								slidesToScroll: 1
+							}
+						},
+						{
+							breakpoint: 768,
+							settings: {
+								slidesToShow: 1,
+								slidesToScroll: 1
+							}
+						}
+					]
+				});
+			});
+		</script>
+
+	</body>
+</html> 
