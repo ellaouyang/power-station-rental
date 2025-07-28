@@ -219,6 +219,74 @@
 					font-size: 16px;
 				}
 			}
+			.scenario-flex-row {
+				display: flex;
+				align-items: stretch;
+				justify-content: center;
+				gap: 32px;
+				margin-bottom: 32px;
+				flex-wrap: wrap;
+			}
+			.scenario-flex-card {
+				flex: 1 1 340px;
+				min-width: 320px;
+				max-width: 480px;
+				background: #fff;
+				border-radius: 16px;
+				box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+				padding: 36px 28px 32px 28px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-height: 420px;
+			}
+			.scenario-flex-divider {
+				width: 2px;
+				background: repeating-linear-gradient(
+					to bottom,
+					#e0e0e0,
+					#e0e0e0 8px,
+					transparent 8px,
+					transparent 16px
+				);
+				margin: 0 16px;
+				min-height: 320px;
+				align-self: center;
+			}
+			@media (max-width: 991px) {
+				.scenario-flex-row {
+					flex-direction: column;
+					gap: 0;
+				}
+				.scenario-flex-divider {
+					display: none;
+				}
+				.scenario-flex-card {
+					margin-bottom: 24px;
+					min-height: 320px;
+				}
+			}
+			.contact-btn {
+				display: inline-block;
+				background: linear-gradient(45deg, #D10024, #B1001E);
+				color: #fff;
+				font-weight: 600;
+				font-size: 1.1rem;
+				border: none;
+				border-radius: 32px;
+				padding: 14px 38px;
+				margin: 0 auto;
+				margin-top: 18px;
+				box-shadow: 0 2px 12px rgba(209,0,36,0.10);
+				transition: background 0.2s;
+				text-decoration: none;
+			}
+			.contact-btn:hover {
+				background: linear-gradient(45deg, #B1001E, #D10024);
+				color: #fff;
+				text-decoration: none;
+			}
 		</style>
 	</head>
 	<body>
@@ -810,108 +878,35 @@
 					</div>
 				</div>
 
-				<!-- Large Outdoor Events -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="scenario-card">
-							<h3 class="scenario-title">Large Outdoor Events</h3>
-							
-							<div class="user-type">
-								<h4>🔹 Typical Users:</h4>
-								<p>Large outdoor events lighting and sound systems</p>
-							</div>
-
-							<div class="equipment-section">
-								<h5>🔹 Custom Services:</h5>
-								<p>Please contact us for custom equipment based on your power requirements and device specifications.</p>
-								<p>For custom equipment package rentals, please email us for quotes.</p>
-								<p>Please provide total power requirements, equipment combinations needed, and rental period in your email.</p>
-							</div>
-
-							<!-- Package Combinations -->
-							<div class="row" style="margin-bottom: 30px;">
-								<div class="col-md-12">
-									<h4 style="color: #D10024; font-weight: 600; margin-bottom: 20px;">📦 Custom Packages</h4>
-								</div>
-								
-								<!-- Custom Package -->
-								<div class="col-md-6">
-									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #D10024;">
-										<div class="package-title" style="color: #D10024; font-size: 18px;">Custom Event Package</div>
-										<div style="margin-bottom: 15px;">
-											<p><strong>Custom equipment combinations based on your power requirements</strong></p>
-											<p><strong>Professional lighting and sound systems</strong></p>
-											<p><strong>High-capacity power solutions</strong></p>
-										</div>
-										
-										<div class="deposit-note">No deposit required</div>
-										
-										<div class="package-title">Contact Us For:</div>
-										<div class="individual-item">
-											<span class="item-name">Custom Quotes</span>
-											<span class="item-price">Email Required</span>
-										</div>
-										<div class="individual-item">
-											<span class="item-name">Power Requirements</span>
-											<span class="item-price">Specify Needs</span>
-										</div>
-										<div class="individual-item">
-											<span class="item-name">Rental Period</span>
-											<span class="item-price">Flexible Terms</span>
-										</div>
-									</div>
-								</div>
-
-								<!-- Experience Package -->
-								<div class="col-md-6">
-									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #28a745;">
-										<div class="package-title" style="color: #28a745; font-size: 18px;">Experience Package</div>
-										<div style="margin-bottom: 15px;">
-											<p><strong>River Max 500wh</strong> - Perfect for small events</p>
-											<p><strong>Basic power station experience</strong></p>
-											<p><strong>Ideal for testing our services</strong></p>
-										</div>
-										
-										<div class="deposit-note">No deposit required</div>
-										
-										<div class="package-title">Package Price:</div>
-										<div class="price">$28/day</div>
-										
-										<div class="package-title">What's Included:</div>
-										<div class="individual-item">
-											<span class="item-name">River Max 500wh</span>
-											<span class="item-price">$28/day</span>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Individual Products -->
-							<div class="row">
-								<div class="col-md-12">
-									<h4 style="color: #D10024; font-weight: 600; margin-bottom: 20px;">🔧 Individual Products</h4>
-								</div>
-								
-								<div class="col-md-12">
-									<div class="products-slider">
-										<!-- River Max Experience -->
-										<div class="product-slide">
-											<div class="product">
-												<div class="product-img">
-													<a href="product.html?id=1"><img src="./img/product01.png" alt="River Max"></a>
-												</div>
-												<div class="product-body">
-													<h3 class="product-name"><a href="product.html?id=1">River Max 500wh</a></h3>
-													<h4 class="product-price">$28/3day</h4>
-													<p style="font-size: 12px; color: #666;">Weight: 7.7kg | AC Max 500W Output</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+				<!-- Power Experience & Large Events (No Repetition) -->
+				<div class="scenario-flex-row">
+					<!-- Standard Experience -->
+					<div class="scenario-flex-card">
+						<h3 class="scenario-title" style="margin-bottom:24px;">Standard Power Experience</h3>
+						<a href="product.html?id=1">
+							<img src="./img/product01.png" alt="River Max" style="max-width:180px;display:block;margin:0 auto 10px;">
+							<div style="font-size:1.2rem;font-weight:700;color:#D10024;">$28/3day</div>
+						</a>
+						<div style="margin-top:24px;text-align:center;font-size:1.05rem;">
+							<p>Perfect for personal or small group outdoor activities.<br>Simple, reliable, and easy to use.</p>
 						</div>
 					</div>
+					<div class="scenario-flex-divider"></div>
+					<!-- Custom Solutions / Large Events -->
+					<div class="scenario-flex-card">
+						<h3 class="scenario-title" style="margin-bottom:24px;">Custom Solutions & Large Events</h3>
+						<div class="user-type" style="width:100%;text-align:center;">
+							<h4 style="margin-bottom:10px;">🔹 Typical Users:</h4>
+							<p>Lighting and sound systems for large outdoor events, remote expeditions, camping enthusiasts, etc.</p>
+						</div>
+						<div class="equipment-section" style="width:100%;text-align:center;">
+							<h5 style="margin-bottom:10px;">🔹 Customization:</h5>
+							<p>Please contact us for a custom solution based on your total power requirements, preferred devices, and rental period.</p>
+						</div>
+					</div>
+				</div>
+				<div style="text-align:center;margin:36px 0 0 0;">
+					<a href="mailto:xx@gmail.com" class="contact-btn">Contact us: xx@gmail.com</a>
 				</div>
 
 
