@@ -5,317 +5,17 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Browse by Scenario - OffGridMate Power Station Rental</title>
-
-		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-
-		<!-- Bootstrap -->
 		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
-
-		<!-- Slick -->
 		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
 		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
-
-		<!-- nouislider -->
 		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
-
-		<!-- Font Awesome Icon -->
 		<link rel="stylesheet" href="css/font-awesome.min.css">
-
-		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
-
-		<style>
-			/* 确保footer延伸到页面底部 */
-			#footer .section {
-				padding-bottom: 32px !important;
-			}
-			
-			/* 修复左侧导航栏导致的footer宽度问题 */
-			#footer {
-				width: 100vw !important;
-				margin-left: calc(-50vw + 50%) !important;
-				margin-right: calc(-50vw + 50%) !important;
-			}
-			
-			#footer .section {
-				width: 100% !important;
-				margin: 0 !important;
-			}
-			
-			/* 修复面包屑导航和主标题之间的白色间隔 */
-			#breadcrumb {
-				margin-bottom: 0 !important;
-				padding-bottom: 0 !important;
-			}
-			
-			.scenario-section {
-				padding: 60px 0;
-				background: #f8f9fa;
-			}
-			
-			.scenario-card {
-				background: white;
-				border-radius: 15px;
-				padding: 30px;
-				margin-bottom: 30px;
-				box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-				transition: transform 0.3s ease;
-			}
-			
-			.scenario-card:hover {
-				transform: translateY(-5px);
-			}
-			
-			.scenario-title {
-				font-size: 2rem;
-				font-weight: 700;
-				color: #D10024;
-				margin-bottom: 20px;
-				text-align: center;
-			}
-			
-			.user-type {
-				background: #e9ecef;
-				padding: 15px;
-				border-radius: 10px;
-				margin-bottom: 20px;
-			}
-			
-			.user-type h4 {
-				color: #495057;
-				font-weight: 600;
-				margin-bottom: 10px;
-			}
-			
-			.equipment-section {
-				margin-bottom: 25px;
-			}
-			
-			.equipment-section h5 {
-				color: #D10024;
-				font-weight: 600;
-				margin-bottom: 15px;
-			}
-			
-			.package-card {
-				background: #f8f9fa;
-				border: 2px solid #dee2e6;
-				border-radius: 10px;
-				padding: 20px;
-				margin-bottom: 15px;
-			}
-			
-			.package-title {
-				font-weight: 700;
-				color: #495057;
-				margin-bottom: 10px;
-			}
-			
-			.price {
-				font-size: 1.2rem;
-				font-weight: 700;
-				color: #D10024;
-			}
-			
-			.individual-item {
-				background: white;
-				border: 1px solid #dee2e6;
-				border-radius: 8px;
-				padding: 15px;
-				margin-bottom: 10px;
-			}
-			
-			.item-name {
-				font-weight: 600;
-				color: #495057;
-			}
-			
-			.item-price {
-				color: #D10024;
-				font-weight: 600;
-			}
-			
-			.deposit-note {
-				background: #fff3cd;
-				border: 1px solid #ffeaa7;
-				border-radius: 5px;
-				padding: 10px;
-				margin-top: 10px;
-				font-size: 0.9rem;
-				color: #856404;
-			}
-			
-			.weight-info {
-				background: #d1ecf1;
-				border: 1px solid #bee5eb;
-				border-radius: 5px;
-				padding: 10px;
-				margin-top: 10px;
-				font-size: 0.9rem;
-				color: #0c5460;
-			}
-
-			/* Slider Styles */
-			.products-slider {
-				position: relative;
-				margin: 0 -10px;
-			}
-
-			.product-slide {
-				padding: 0 10px;
-			}
-
-			.product-slide .product {
-				margin-bottom: 0;
-			}
-
-			/* Slick Slider Custom Styles */
-			.products-slider .slick-prev,
-			.products-slider .slick-next {
-				position: absolute;
-				top: 50%;
-				transform: translateY(-50%);
-				z-index: 10;
-				width: 40px;
-				height: 40px;
-				background: #D10024;
-				border: none;
-				border-radius: 50%;
-				color: white;
-				font-size: 18px;
-				cursor: pointer;
-				transition: all 0.3s ease;
-			}
-
-			.products-slider .slick-prev {
-				left: -20px;
-			}
-
-			.products-slider .slick-next {
-				right: -20px;
-			}
-
-			.products-slider .slick-prev:hover,
-			.products-slider .slick-next:hover {
-				background: #b3001a;
-				transform: translateY(-50%) scale(1.1);
-			}
-
-			/* Hide default Slick arrows */
-			.products-slider .slick-arrow {
-				display: none !important;
-			}
-
-			/* Show only our custom arrows */
-			.products-slider .slick-prev,
-			.products-slider .slick-next {
-				display: block !important;
-			}
-
-			.products-slider .slick-dots {
-				bottom: -30px;
-			}
-
-			.products-slider .slick-dots li button:before {
-				color: #D10024;
-			}
-
-			.products-slider .slick-dots li.slick-active button:before {
-				color: #D10024;
-			}
-
-			/* Responsive adjustments */
-			@media (max-width: 768px) {
-				.products-slider .slick-prev {
-					left: -10px;
-				}
-
-				.products-slider .slick-next {
-					right: -10px;
-				}
-
-				.products-slider .slick-prev,
-				.products-slider .slick-next {
-					width: 35px;
-					height: 35px;
-					font-size: 16px;
-				}
-			}
-			.scenario-flex-row {
-				display: flex;
-				align-items: stretch;
-				justify-content: center;
-				gap: 32px;
-				margin-bottom: 32px;
-				flex-wrap: wrap;
-			}
-			.scenario-flex-card {
-				flex: 1 1 340px;
-				min-width: 320px;
-				max-width: 480px;
-				background: #fff;
-				border-radius: 16px;
-				box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-				padding: 36px 28px 32px 28px;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				min-height: 420px;
-			}
-			.scenario-flex-divider {
-				width: 2px;
-				background: repeating-linear-gradient(
-					to bottom,
-					#e0e0e0,
-					#e0e0e0 8px,
-					transparent 8px,
-					transparent 16px
-				);
-				margin: 0 16px;
-				min-height: 320px;
-				align-self: center;
-			}
-			@media (max-width: 991px) {
-				.scenario-flex-row {
-					flex-direction: column;
-					gap: 0;
-				}
-				.scenario-flex-divider {
-					display: none;
-				}
-				.scenario-flex-card {
-					margin-bottom: 24px;
-					min-height: 320px;
-				}
-			}
-			.contact-btn {
-				display: inline-block;
-				background: linear-gradient(45deg, #D10024, #B1001E);
-				color: #fff;
-				font-weight: 600;
-				font-size: 1.1rem;
-				border: none;
-				border-radius: 32px;
-				padding: 14px 38px;
-				margin: 0 auto;
-				margin-top: 18px;
-				box-shadow: 0 2px 12px rgba(209,0,36,0.10);
-				transition: background 0.2s;
-				text-decoration: none;
-			}
-			.contact-btn:hover {
-				background: linear-gradient(45deg, #B1001E, #D10024);
-				color: #fff;
-				text-decoration: none;
-			}
-		</style>
+		<link type="text/css" rel="stylesheet" href="css/components.css"/>
 	</head>
 	<body>
-		<!-- HEADER -->
 		<header>
-			<!-- TOP HEADER -->
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
@@ -325,27 +25,20 @@
 					</ul>
 				</div>
 			</div>
-			<!-- /TOP HEADER -->
-
-			<!-- MAIN HEADER -->
 			<div id="header">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="header-logo">
 								<a href="index.html" class="logo">
-									<span style="color: #fff; font-size: 32px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">OffGridMate</span>
+									<span>OffGridMate</span>
 								</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- /MAIN HEADER -->
 		</header>
-		<!-- /HEADER -->
-
-		<!-- BREADCRUMB -->
 		<div id="breadcrumb" class="section">
 			<div class="container">
 				<div class="row">
@@ -358,84 +51,68 @@
 				</div>
 			</div>
 		</div>
-		<!-- /BREADCRUMB -->
-
-		<!-- SCENARIOS SECTION -->
 		<div class="scenario-section">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h2 class="text-center" style="margin-bottom: 50px; color: #D10024; font-weight: 700;">Choose Your Equipment Package by Scenario</h2>
+						<h2 class="text-center mb-30">Choose Your Equipment Package by Scenario</h2>
 					</div>
 				</div>
-
 				<div class="row">
-					<!-- Left Sidebar - Scenario Navigation -->
 					<div class="col-md-3">
-						<div class="scenario-nav" style="position: sticky; top: 20px; background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px;">
-							<h4 style="color: #D10024; font-weight: 700; margin-bottom: 20px; text-align: center;">📋 Scenarios</h4>
-							<ul class="scenario-list" style="list-style: none; padding: 0; margin: 0;">
-								<li style="margin-bottom: 10px;">
-									<a href="#short-distance" class="scenario-link" style="display: block; padding: 10px 15px; background: #f8f9fa; border-radius: 8px; color: #495057; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent;">
-										<span style="font-weight: 600;">🏕️ Short Distance Leisure</span>
+						<div class="scenario-nav">
+							<h4>📋 Scenarios</h4>
+							<ul class="scenario-list">
+								<li>
+									<a href="#short-distance" class="scenario-link">
+										<span>🏕️ Short Distance Leisure</span>
 									</a>
 								</li>
-								<li style="margin-bottom: 10px;">
-									<a href="#typical-camping" class="scenario-link" style="display: block; padding: 10px 15px; background: #f8f9fa; border-radius: 8px; color: #495057; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent;">
-										<span style="font-weight: 600;">🏞️ Typical Camping</span>
+								<li>
+									<a href="#typical-camping" class="scenario-link">
+										<span>🏞️ Typical Camping</span>
 									</a>
 								</li>
-								<li style="margin-bottom: 10px;">
-									<a href="#heavy-users" class="scenario-link" style="display: block; padding: 10px 15px; background: #f8f9fa; border-radius: 8px; color: #495057; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent;">
-										<span style="font-weight: 600;">🚐 Heavy Users</span>
+								<li>
+									<a href="#heavy-users" class="scenario-link">
+										<span>🚐 Heavy Users</span>
 									</a>
 								</li>
-								<li style="margin-bottom: 10px;">
-									<a href="#standard-experience" class="scenario-link" style="display: block; padding: 10px 15px; background: #f8f9fa; border-radius: 8px; color: #495057; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent;">
-										<span style="font-weight: 600;">⚡ Standard Experience</span>
+								<li>
+									<a href="#standard-experience" class="scenario-link">
+										<span>🎯 Standard Experience</span>
 									</a>
 								</li>
-								<li style="margin-bottom: 10px;">
-									<a href="#custom-solutions" class="scenario-link" style="display: block; padding: 10px 15px; background: #f8f9fa; border-radius: 8px; color: #495057; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent;">
-										<span style="font-weight: 600;">🎯 Custom Solutions</span>
+								<li>
+									<a href="#custom-solutions" class="scenario-link">
+										<span>🎯 Custom Solutions</span>
 									</a>
 								</li>
 							</ul>
-							
-							<!-- Booking Button -->
-							<div style="margin-top: 30px; text-align: center;">
-								<button id="bookingBtn" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 16px; font-weight: 600; background: #D10024; border: none; border-radius: 8px; color: white; transition: all 0.3s ease;">
+							<div class="text-center">
+								<button id="bookingBtn" class="booking-btn">
 									📧 BOOKING
 								</button>
 							</div>
 						</div>
 					</div>
-
-					<!-- Main Content -->
 					<div class="col-md-9">
-						<!-- Short Distance Leisure Camping -->
 						<div class="row">
 							<div class="col-md-12">
 						<div class="scenario-card" id="short-distance">
 							<h3 class="scenario-title">Short Distance Leisure Camping</h3>
-							
 							<div class="user-type">
 								<h4>🔹 Typical Users:</h4>
 								<p>Weekend short-distance camping, only setting up tents at campsites or by the car</p>
 							</div>
-
 							<div class="equipment-section">
 								<h5>🔹 Main Equipment:</h5>
 								<p>Phone, camera, laptop charging, 240V general lighting, electric blanket</p>
 							</div>
-
-							<!-- Package Combinations -->
 							<div class="row" style="margin-bottom: 30px;">
 								<div class="col-md-12">
 									<h4 style="color: #D10024; font-weight: 600; margin-bottom: 20px;">📦 Recommended Packages</h4>
 								</div>
-								
-								<!-- Package 1 -->
 								<div class="col-md-6">
 									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #D10024;">
 										<div class="package-title" style="color: #D10024; font-size: 18px;">Basic Package</div>
@@ -443,14 +120,11 @@
 											<p><strong>River Max 500wh</strong> - AC Max 500W Output</p>
 											<p><strong>110W Foldable Solar Panel</strong></p>
 										</div>
-										
 										<div class="deposit-note">No deposit required</div>
-										
 										<div class="package-title">Package Prices:</div>
 										<div class="price">3 Days: $65</div>
 										<div class="price">1 Week: $99</div>
 										<div class="price">2 Weeks: $168</div>
-										
 										<div class="package-title">Individual Prices:</div>
 										<div class="individual-item">
 											<span class="item-name">River Max</span>
@@ -462,8 +136,6 @@
 										</div>
 									</div>
 								</div>
-
-								<!-- Package 2 -->
 								<div class="col-md-6">
 									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #28a745;">
 										<div class="package-title" style="color: #28a745; font-size: 18px;">Premium Package</div>
@@ -471,14 +143,11 @@
 											<p><strong>Delta 900wh</strong> - AC Max 1400W Output</p>
 											<p><strong>160W Foldable Solar Panel</strong></p>
 										</div>
-										
 										<div class="deposit-note">No deposit required</div>
-										
 										<div class="package-title">Package Prices:</div>
 										<div class="price">3 Days: $89</div>
 										<div class="price">1 Week: $150</div>
 										<div class="price">2 Weeks: $255</div>
-										
 										<div class="package-title">Individual Prices:</div>
 										<div class="individual-item">
 											<span class="item-name">Delta</span>
@@ -491,16 +160,12 @@
 									</div>
 								</div>
 							</div>
-
-							<!-- Individual Products -->
 							<div class="row">
 								<div class="col-md-12">
 									<h4 style="color: #D10024; font-weight: 600; margin-bottom: 20px;">🔧 Individual Products</h4>
 								</div>
-								
 								<div class="col-md-12">
 									<div class="products-slider">
-										<!-- River Max -->
 										<div class="product-slide">
 											<div class="product">
 												<div class="product-img">
@@ -513,8 +178,6 @@
 												</div>
 											</div>
 										</div>
-
-										<!-- 110W Solar Panel -->
 										<div class="product-slide">
 											<div class="product">
 												<div class="product-img">
@@ -527,8 +190,6 @@
 												</div>
 											</div>
 										</div>
-
-										<!-- Delta -->
 										<div class="product-slide">
 											<div class="product">
 												<div class="product-img">
@@ -541,8 +202,6 @@
 												</div>
 											</div>
 										</div>
-
-										<!-- 160W Solar Panel -->
 										<div class="product-slide">
 											<div class="product">
 												<div class="product-img">
@@ -561,30 +220,22 @@
 						</div>
 					</div>
 				</div>
-
-				<!-- Typical Outdoor Camping -->
 				<div class="row">
 					<div class="col-md-12">
 						<div class="scenario-card" id="typical-camping">
 							<h3 class="scenario-title">Typical Outdoor Camping</h3>
-							
 							<div class="user-type">
 								<h4>🔹 Typical Users:</h4>
 								<p>Camping for 2+ nights, group activities, extended activities (photography, cooking, watching movies)</p>
 							</div>
-
 							<div class="equipment-section">
 								<h5>🔹 Main Equipment:</h5>
 								<p>Device charging & 240V general lighting, electric blanket, induction cooker, outdoor refrigerator (quick ice making)</p>
 							</div>
-
-							<!-- Package Combinations -->
 							<div class="row" style="margin-bottom: 30px;">
 								<div class="col-md-12">
 									<h4 style="color: #D10024; font-weight: 600; margin-bottom: 20px;">📦 Recommended Packages</h4>
 								</div>
-								
-								<!-- Package 1 -->
 								<div class="col-md-6">
 									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #D10024;">
 										<div class="package-title" style="color: #D10024; font-size: 18px;">Standard Package</div>
@@ -593,14 +244,11 @@
 											<p><strong>160W Foldable Solar Panel</strong></p>
 											<p><strong>Glacier Camping Refrigerator + Battery</strong></p>
 										</div>
-										
 										<div class="deposit-note">No deposit required</div>
-										
 										<div class="package-title">Package Prices:</div>
 										<div class="price">3 Days: $119</div>
 										<div class="price">1 Week: $189</div>
 										<div class="price">2 Weeks: $321</div>
-										
 										<div class="package-title">Individual Prices:</div>
 										<div class="individual-item">
 											<span class="item-name">Delta</span>
@@ -616,8 +264,6 @@
 										</div>
 									</div>
 								</div>
-
-								<!-- Package 2 -->
 								<div class="col-md-6">
 									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #28a745;">
 										<div class="package-title" style="color: #28a745; font-size: 18px;">Premium Package</div>
@@ -626,14 +272,11 @@
 											<p><strong>220W Foldable Solar Panel</strong></p>
 											<p><strong>Glacier Camping Refrigerator + Battery</strong></p>
 										</div>
-										
 										<div class="deposit-note">$800 deposit required</div>
-										
 										<div class="package-title">Package Prices:</div>
 										<div class="price">3 Days: $169</div>
 										<div class="price">1 Week: $265</div>
 										<div class="price">2 Weeks: $451</div>
-										
 										<div class="package-title">Individual Prices:</div>
 										<div class="individual-item">
 											<span class="item-name">Delta Max</span>
@@ -650,16 +293,12 @@
 									</div>
 								</div>
 							</div>
-
-							<!-- Individual Products -->
 							<div class="row">
 								<div class="col-md-12">
 									<h4 style="color: #D10024; font-weight: 600; margin-bottom: 20px;">🔧 Individual Products</h4>
 								</div>
-								
 								<div class="col-md-12">
 									<div class="products-slider">
-										<!-- Delta -->
 										<div class="product-slide">
 											<div class="product">
 												<div class="product-img">
@@ -672,8 +311,6 @@
 												</div>
 											</div>
 										</div>
-
-										<!-- 160W Solar Panel -->
 										<div class="product-slide">
 											<div class="product">
 												<div class="product-img">
@@ -686,8 +323,6 @@
 												</div>
 											</div>
 										</div>
-
-										<!-- Glacier Refrigerator -->
 										<div class="product-slide">
 											<div class="product">
 												<div class="product-img">
@@ -700,8 +335,6 @@
 												</div>
 											</div>
 										</div>
-
-										<!-- Delta Max -->
 										<div class="product-slide">
 											<div class="product">
 												<div class="product-img">
@@ -714,8 +347,6 @@
 												</div>
 											</div>
 										</div>
-
-										<!-- 220W Solar Panel -->
 										<div class="product-slide">
 											<div class="product">
 												<div class="product-img">
@@ -734,30 +365,22 @@
 						</div>
 					</div>
 				</div>
-
-				<!-- Heavy Users -->
 				<div class="row">
 					<div class="col-md-12">
 						<div class="scenario-card" id="heavy-users">
 							<h3 class="scenario-title">Heavy Users (Remote Off-road/Camping Enthusiasts/RV Owners)</h3>
-							
 							<div class="user-type">
 								<h4>🔹 Typical Users:</h4>
 								<p>RV owners, off-road enthusiasts, camping for 3+ days, far from campsites (no power points), using multiple electrical devices</p>
 							</div>
-
 							<div class="equipment-section">
 								<h5>🔹 Main Equipment:</h5>
 								<p>Device charging & 240V general lighting, electric blanket, induction cooker, outdoor refrigerator, outdoor air conditioner</p>
 							</div>
-
-							<!-- Package Combinations -->
 							<div class="row" style="margin-bottom: 30px;">
 								<div class="col-md-12">
 									<h4 style="color: #D10024; font-weight: 600; margin-bottom: 20px;">📦 Recommended Packages</h4>
 								</div>
-								
-								<!-- Package 1 -->
 								<div class="col-md-4">
 									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #D10024;">
 										<div class="package-title" style="color: #D10024; font-size: 18px;">Solar Package</div>
@@ -767,14 +390,11 @@
 											<p><strong>Glacier Camping Refrigerator + Battery</strong></p>
 											<p><strong>Wave Camping Air Conditioner + Battery</strong></p>
 										</div>
-										
 										<div class="deposit-note">$1000 deposit required</div>
-										
 										<div class="package-title">Package Prices:</div>
 										<div class="price">3 Days: $199</div>
 										<div class="price">1 Week: $355</div>
 										<div class="price">2 Weeks: $604</div>
-										
 										<div class="package-title">Individual Prices:</div>
 										<div class="individual-item">
 											<span class="item-name">Delta Max</span>
@@ -794,8 +414,6 @@
 										</div>
 									</div>
 								</div>
-
-								<!-- Package 2 -->
 								<div class="col-md-4">
 									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #28a745;">
 										<div class="package-title" style="color: #28a745; font-size: 18px;">Generator Package</div>
@@ -805,14 +423,11 @@
 											<p><strong>Glacier Camping Refrigerator + Battery</strong></p>
 											<p><strong>Wave Camping Air Conditioner + Battery</strong></p>
 										</div>
-										
 										<div class="deposit-note">$1200 deposit required</div>
-										
 										<div class="package-title">Package Prices:</div>
 										<div class="price">3 Days: $199</div>
 										<div class="price">1 Week: $355</div>
 										<div class="price">2 Weeks: $604</div>
-										
 										<div class="package-title">Individual Prices:</div>
 										<div class="individual-item">
 											<span class="item-name">Delta Max</span>
@@ -832,8 +447,6 @@
 										</div>
 									</div>
 								</div>
-
-								<!-- Package 3 -->
 								<div class="col-md-4">
 									<div class="package-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #007bff;">
 										<div class="package-title" style="color: #007bff; font-size: 18px;">Ultimate Package</div>
@@ -844,14 +457,11 @@
 											<p><strong>Glacier Camping Refrigerator + Battery</strong></p>
 											<p><strong>Wave Camping Air Conditioner + Battery</strong></p>
 										</div>
-										
 										<div class="deposit-note">$1500 deposit required</div>
-										
 										<div class="package-title">Package Prices:</div>
 										<div class="price">3 Days: $249</div>
 										<div class="price">1 Week: $425</div>
 										<div class="price">2 Weeks: $723</div>
-										
 										<div class="package-title">Individual Prices:</div>
 										<div class="individual-item">
 											<span class="item-name">Delta Max + Extension</span>
@@ -860,16 +470,12 @@
 									</div>
 								</div>
 							</div>
-
-							<!-- Individual Products -->
 							<div class="row">
 								<div class="col-md-12">
 									<h4 style="color: #D10024; font-weight: 600; margin-bottom: 20px;">🔧 Individual Products</h4>
 								</div>
-								
 								<div class="col-md-12">
 									<div class="products-slider">
-										<!-- Delta Max -->
 										<div class="product-slide">
 											<div class="product">
 												<div class="product-img">
@@ -882,8 +488,6 @@
 												</div>
 											</div>
 										</div>
-
-										<!-- 400W Solar Panel -->
 										<div class="product-slide">
 											<div class="product">
 												<div class="product-img">
@@ -896,8 +500,6 @@
 												</div>
 											</div>
 										</div>
-
-										<!-- Wave Air Conditioner -->
 										<div class="product-slide">
 											<div class="product">
 												<div class="product-img">
@@ -910,8 +512,6 @@
 												</div>
 											</div>
 										</div>
-
-										<!-- Generator -->
 										<div class="product-slide">
 											<div class="product">
 												<div class="product-img">
@@ -924,8 +524,6 @@
 												</div>
 											</div>
 										</div>
-
-										<!-- Delta Max Extension Battery -->
 										<div class="product-slide">
 											<div class="product">
 												<div class="product-img">
@@ -944,10 +542,7 @@
 						</div>
 					</div>
 				</div>
-
-				<!-- Power Experience & Large Events (No Repetition) -->
 				<div class="scenario-flex-row">
-					<!-- Standard Experience -->
 					<div class="scenario-flex-card" id="standard-experience">
 						<h3 class="scenario-title" style="margin-bottom:24px;">Standard Power Experience</h3>
 						<a href="product.html?id=1">
@@ -959,7 +554,6 @@
 						</div>
 					</div>
 					<div class="scenario-flex-divider"></div>
-					<!-- Custom Solutions / Large Events -->
 					<div class="scenario-flex-card" id="custom-solutions">
 						<h3 class="scenario-title" style="margin-bottom:24px;">Custom Solutions & Large Events</h3>
 						<div class="user-type" style="width:100%;text-align:center;">
@@ -972,24 +566,16 @@
 						</div>
 					</div>
 				</div>
-
-
-
 			</div>
 		</div>
-		<!-- /SCENARIOS SECTION -->
-
-		<!-- FOOTER -->
 		<footer id="footer">
 			<div class="section" style="background:#222;color:#fff;padding:32px 0 0 0;">
 				<div class="container">
 					<div class="row">
-						<!-- About Us -->
 						<div class="col-md-4 col-xs-12" style="margin-bottom:24px;">
 							<h4 style="color:#fff;font-weight:700;">About Us</h4>
 							<p style="color:#ccc;">We provide high-quality power station rental services for outdoor enthusiasts, ensuring your adventure is always powered up.</p>
 						</div>
-						<!-- Contact -->
 						<div class="col-md-4 col-xs-12" style="margin-bottom:24px;">
 							<h4 style="color:#fff;font-weight:700;">Contact</h4>
 							<ul style="list-style:none;padding:0;color:#ccc;">
@@ -998,7 +584,6 @@
 								<li><i class="fa fa-envelope-o"></i> offgridmate@hotmail.com</li>
 							</ul>
 						</div>
-						<!-- Terms -->
 						<div class="col-md-4 col-xs-12">
 							<h4 style="color:#fff;font-weight:700;">Terms & Conditions</h4>
 							<ul style="color:#ccc;padding-left:18px;">
@@ -1020,9 +605,6 @@
 				</div>
 			</div>
 		</footer>
-		<!-- /FOOTER -->
-
-		<!-- Terms Modal (与产品详情页复用) -->
 		<div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel">
 			<div class="modal-dialog modal-lg" role="document">
 				<div class="modal-content">
@@ -1062,16 +644,12 @@
 				</div>
 			</div>
 		</div>
-		<!-- /Terms Modal -->
-
-		<!-- jQuery Plugins -->
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/slick.min.js"></script>
 		<script type="text/javascript" src="js/nouislider.min.js"></script>
 		<script type="text/javascript" src="js/jquery.zoom.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
-
 		<script>
 			$(document).ready(function() {
 				// Initialize product sliders
@@ -1109,17 +687,14 @@
 						}
 					]
 				});
-				
 				// Smooth scrolling for scenario links
 				$('.scenario-link').on('click', function(e) {
 					e.preventDefault();
 					var target = $(this).attr('href');
 					var offset = 100; // Offset for sticky header
-					
 					$('html, body').animate({
 						scrollTop: $(target).offset().top - offset
 					}, 800);
-					
 					// Update active state
 					$('.scenario-link').css({
 						'background': '#f8f9fa',
@@ -1131,22 +706,18 @@
 						'border-left-color': '#D10024'
 					});
 				});
-				
 				// Booking button functionality
 				$('#bookingBtn').on('click', function() {
 					// Open email client with pre-filled subject
 					window.location.href = 'mailto:offgridmate@hotmail.com?subject=Power Station Rental Booking Request';
 				});
-				
 				// Highlight current section on scroll
 				$(window).on('scroll', function() {
 					var scrollTop = $(window).scrollTop();
 					var offset = 150;
-					
 					$('.scenario-card, .scenario-flex-card').each(function() {
 						var top = $(this).offset().top - offset;
 						var bottom = top + $(this).outerHeight();
-						
 						if (scrollTop >= top && scrollTop < bottom) {
 							var id = $(this).attr('id');
 							$('.scenario-link').css({
@@ -1162,7 +733,6 @@
 						}
 					});
 				});
-				
 				// Hover effects for scenario links
 				$('.scenario-link').hover(
 					function() {
@@ -1182,7 +752,6 @@
 						}
 					}
 				);
-				
 				// Booking button hover effect
 				$('#bookingBtn').hover(
 					function() {
@@ -1200,6 +769,7 @@
 				);
 			});
 		</script>
-
 	</body>
 </html> 
+
+

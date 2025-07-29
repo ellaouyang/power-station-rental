@@ -4,206 +4,22 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
 		<title>OFFGRIDMATE - camping power supply</title>
-
-		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-
-		<!-- Bootstrap -->
 		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
-
-		<!-- Slick -->
 		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
 		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
-
-		<!-- nouislider -->
 		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
-
-		<!-- Font Awesome Icon -->
 		<link rel="stylesheet" href="css/font-awesome.min.css">
-
-		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+		<link type="text/css" rel="stylesheet" href="css/components.css"/>
 		
-		<!-- 产品筛选样式 -->
-		<style>
-			/* 修复面包屑导航和主标题之间的白色间隔 */
-			#breadcrumb {
-				margin-bottom: 0 !important;
-				padding-bottom: 0 !important;
-			}
-			
-			.product-item {
-				display: inline-block;
-				float: left;
-				margin-bottom: 20px;
-			}
-			
-			@media (min-width: 768px) {
-				.product-item {
-					width: 33.333%;
-				}
-			}
-			
-			@media (max-width: 767px) {
-				.product-item {
-					width: 50%;
-				}
-			}
-		</style>
-
-		<!-- Contact Form Styles -->
-		<style>
-			#contact-form-section {
-				background-color: #fff;
-				border-top: 1px solid #E4E7ED;
-				border-bottom: 1px solid #E4E7ED;
-			}
-			.contact-form {
-				max-width: 600px;
-				margin: 0 auto;
-				padding: 40px 0;
-				text-align: center;
-				position: relative;
-			}
-			.contact-form .section-title {
-				margin-bottom: 30px;
-			}
-			.contact-form .section-title h3 {
-				font-size: 24px;
-				font-weight: 700;
-				color: #2C3E50;
-				margin-bottom: 10px;
-			}
-			.contact-form form {
-				position: relative;
-				z-index: 1;
-			}
-			.contact-form:after {
-				content: "\f003";
-				font-family: FontAwesome;
-				position: absolute;
-				font-size: 250px;
-				color: #E4E7ED;
-				top: 50%;
-				left: -120px;
-				-webkit-transform: translateY(-50%) rotate(15deg);
-				-ms-transform: translateY(-50%) rotate(15deg);
-				transform: translateY(-50%) rotate(15deg);
-				z-index: 0;
-				pointer-events: none;
-			}
-			.contact-form .form-group {
-				margin-bottom: 20px;
-			}
-			.contact-form .form-control {
-				width: 100%;
-				padding: 15px 20px;
-				border: 1px solid #E4E7ED;
-				border-radius: 4px;
-				font-size: 14px;
-				background-color: #fff;
-				transition: all 0.3s ease;
-			}
-			.contact-form .form-control:focus {
-				border-color: #D10024;
-				outline: none;
-				box-shadow: 0 0 5px rgba(209, 0, 36, 0.2);
-			}
-			.contact-form textarea.form-control {
-				resize: vertical;
-				min-height: 120px;
-			}
-			.contact-form .btn-primary {
-				background-color: #D10024;
-				border-color: #D10024;
-				padding: 15px 40px;
-				font-size: 16px;
-				font-weight: 500;
-				text-transform: uppercase;
-				border-radius: 4px;
-				transition: all 0.3s ease;
-				margin-top: 10px;
-			}
-			.contact-form .btn-primary:hover {
-				background-color: #B1001E;
-				border-color: #B1001E;
-			}
-		</style>
-
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-
-		<!-- 在<head>或样式区添加如下CSS -->
-		<style>
-		.product-img {
-			width: 100%;
-			height: 220px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			background: #fff;
-			border-radius: 8px 8px 0 0;
-			overflow: hidden;
-			border-bottom: 1px solid #eee;
-		}
-		.product-img img {
-			max-width: 90%;
-			max-height: 200px;
-			object-fit: contain;
-			margin: 0 auto;
-			display: block;
-		}
-		.product {
-			background: #fff;
-			border: 1px solid #eee;
-			border-radius: 8px;
-			box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-			margin-bottom: 30px;
-			min-height: 380px;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			transition: box-shadow 0.2s;
-		}
-		.product:hover {
-			box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-		}
-		.product-body {
-			padding: 18px 16px 12px 16px;
-			flex: 1;
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-end;
-		}
-		.product-name {
-			font-size: 1.1rem;
-			font-weight: 600;
-			margin-bottom: 8px;
-			min-height: 2.5em;
-		}
-		.product-price {
-			color: #D10024;
-			font-size: 1.1rem;
-			font-weight: 700;
-			margin-bottom: 8px;
-		}
-		.product-labels {
-			margin-top: 8px;
-		}
-		</style>
-
+		
+		
+		
     </head>
 	<body>
-		<!-- HEADER -->
 		<header>
-			<!-- TOP HEADER -->
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
@@ -213,15 +29,9 @@
 					</ul>
 				</div>
 			</div>
-			<!-- /TOP HEADER -->
-
-			<!-- MAIN HEADER -->
 			<div id="header">
-				<!-- container -->
 				<div class="container">
-					<!-- row -->
 					<div class="row">
-						<!-- LOGO -->
 						<div class="col-md-12">
 							<div class="header-logo">
 								<a href="#" class="logo">
@@ -229,17 +39,10 @@
 								</a>
 							</div>
 						</div>
-						<!-- /LOGO -->
 					</div>
-					<!-- row -->
 				</div>
-				<!-- container -->
 			</div>
-			<!-- /MAIN HEADER -->
 		</header>
-		<!-- /HEADER -->
-
-		<!-- BREADCRUMB -->
 		<div id="breadcrumb" class="section" style="padding: 18px 0;">
 			<div class="container">
 				<div class="row">
@@ -252,17 +55,10 @@
 				</div>
 			</div>
 		</div>
-		<!-- /BREADCRUMB -->
-
-		<!-- SECTION -->
 		<div class="section">
-			<!-- container -->
 			<div class="container">
-				<!-- row -->
 				<div class="row">
-					<!-- ASIDE -->
 					<div id="aside" class="col-md-3">
-						<!-- aside Widget -->
 						<div class="aside">
 							<h3 class="aside-title">Product Categories<br><small>Filter by Type</small></h3>
 							<div class="aside-body">
@@ -274,24 +70,14 @@
 								</ul>
 							</div>
 						</div>
-						<!-- /aside Widget -->
 					</div>
-					<!-- /ASIDE -->
-
-					<!-- STORE -->
 					<div id="store" class="col-md-9">
-						<!-- section title -->
 						<div class="col-md-12">
 							<div class="section-title">
 								<h3 class="title">All Products</h3>
 							</div>
 						</div>
-						<!-- /section title -->
-
-						<!-- store products -->
 						<div class="row" id="product-list">
-							<!-- 产品卡片都在这里 -->
-							<!-- River Max -->
 							<div class="col-md-4 col-xs-6 product-item" data-category="power">
 								<div class="product">
 									<div class="product-img">
@@ -307,8 +93,6 @@
 									</div>
 								</div>
 							</div>
-
-							<!-- Delta -->
 							<div class="col-md-4 col-xs-6 product-item" data-category="power">
 								<div class="product">
 									<div class="product-img">
@@ -324,10 +108,7 @@
 									</div>
 								</div>
 							</div>
-
 							<div class="clearfix visible-sm visible-xs"></div>
-
-							<!-- Delta Max -->
 							<div class="col-md-4 col-xs-6 product-item" data-category="power">
 								<div class="product">
 									<div class="product-img">
@@ -343,10 +124,7 @@
 									</div>
 								</div>
 							</div>
-
 							<div class="clearfix visible-lg visible-md"></div>
-
-							<!-- 110W太阳能充电板 -->
 							<div class="col-md-4 col-xs-6 product-item" data-category="solar">
 								<div class="product">
 									<div class="product-img">
@@ -362,10 +140,7 @@
 									</div>
 								</div>
 							</div>
-
 							<div class="clearfix visible-sm visible-xs"></div>
-
-							<!-- 160W太阳能充电板 -->
 							<div class="col-md-4 col-xs-6 product-item" data-category="solar">
 								<div class="product">
 									<div class="product-img">
@@ -381,8 +156,6 @@
 									</div>
 								</div>
 							</div>
-
-							<!-- 220W太阳能充电板 -->
 							<div class="col-md-4 col-xs-6 product-item" data-category="solar">
 								<div class="product">
 									<div class="product-img">
@@ -398,10 +171,7 @@
 									</div>
 								</div>
 							</div>
-
 							<div class="clearfix visible-lg visible-md visible-sm visible-xs"></div>
-
-							<!-- 400W太阳能充电板 -->
 							<div class="col-md-4 col-xs-6 product-item" data-category="solar">
 								<div class="product">
 									<div class="product-img">
@@ -417,8 +187,6 @@
 									</div>
 								</div>
 							</div>
-
-							<!-- Glacier户外冰箱 -->
 							<div class="col-md-4 col-xs-6 product-item" data-category="accessories">
 								<div class="product">
 									<div class="product-img">
@@ -434,8 +202,6 @@
 									</div>
 								</div>
 							</div>
-
-							<!-- Wave户外空调 -->
 							<div class="col-md-4 col-xs-6 product-item" data-category="accessories">
 								<div class="product">
 									<div class="product-img">
@@ -451,8 +217,6 @@
 									</div>
 								</div>
 							</div>
-
-							<!-- 1700W汽油发电机 -->
 							<div class="col-md-4 col-xs-6 product-item" data-category="accessories">
 								<div class="product">
 									<div class="product-img">
@@ -468,8 +232,6 @@
 									</div>
 								</div>
 							</div>
-
-							<!-- Delta Max扩展电池 -->
 							<div class="col-md-4 col-xs-6 product-item" data-category="accessories">
 								<div class="product">
 									<div class="product-img">
@@ -486,27 +248,18 @@
 								</div>
 							</div>
 						</div>
-						<!-- /store products -->
 					</div>
-					<!-- /store -->
 				</div>
-				<!-- /row -->
 			</div>
-			<!-- /container -->
 		</div>
-		<!-- /SECTION -->
-
-		<!-- FOOTER -->
 		<footer id="footer">
 			<div class="section" style="background:#222;color:#fff;padding:32px 0 0 0;">
 				<div class="container">
 					<div class="row">
-						<!-- About Us -->
 						<div class="col-md-4 col-xs-12" style="margin-bottom:24px;">
 							<h4 style="color:#fff;font-weight:700;">About Us</h4>
 							<p style="color:#ccc;">We provide high-quality power station rental services for outdoor enthusiasts, ensuring your adventure is always powered up.</p>
 						</div>
-						<!-- Contact -->
 						<div class="col-md-4 col-xs-12" style="margin-bottom:24px;">
 							<h4 style="color:#fff;font-weight:700;">Contact</h4>
 							<ul style="list-style:none;padding:0;color:#ccc;">
@@ -515,7 +268,6 @@
 								<li><i class="fa fa-envelope-o"></i> offgridmate@hotmail.com</li>
 							</ul>
 						</div>
-						<!-- Terms -->
 						<div class="col-md-4 col-xs-12">
 							<h4 style="color:#fff;font-weight:700;">Terms & Conditions</h4>
 							<ul style="color:#ccc;padding-left:18px;">
@@ -537,9 +289,6 @@
 				</div>
 			</div>
 		</footer>
-		<!-- /FOOTER -->
-
-		<!-- Terms Modal (与产品详情页复用) -->
 		<div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel">
 			<div class="modal-dialog modal-lg" role="document">
 				<div class="modal-content">
@@ -579,25 +328,18 @@
 				</div>
 			</div>
 		</div>
-		<!-- /Terms Modal -->
-
-		<!-- jQuery Plugins -->
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/slick.min.js"></script>
 		<script type="text/javascript" src="js/nouislider.min.js"></script>
 		<script type="text/javascript" src="js/jquery.zoom.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
-
-		<!-- EmailJS SDK -->
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 		<script type="text/javascript">
 			(function() {
 				emailjs.init("YOUR_PUBLIC_KEY"); // 需要替换为你的EmailJS公钥
 			})();
 		</script>
-
-		<!-- Contact Form Script -->
 		<script>
 		$(document).ready(function() {
 			$('#contactForm').on('submit', function(e) {
@@ -619,8 +361,6 @@
 			});
 		});
 		</script>
-
-		<!-- JS筛选功能重写 -->
 		<script>
 		$(document).ready(function() {
 			// 缓存所有产品HTML（用变量保存原始HTML，后续筛选都用这个变量，不再从DOM取）
@@ -628,13 +368,11 @@
 			$('#product-list .product-item').each(function() {
 				allProducts.push($(this).prop('outerHTML'));
 			});
-
 			$('.category-link').click(function(e) {
 				e.preventDefault();
 				var category = $(this).data('category');
 				$('.category-link').removeClass('active');
 				$(this).addClass('active');
-
 				// 更新页面标题
 				var titleText = '';
 				if(category === 'all') {
@@ -647,13 +385,11 @@
 					titleText = 'Accessories';
 				}
 				$('.section-title .title').text(titleText);
-
 				var filtered = [];
 				if(category === 'all') {
 					filtered = allProducts;
 				} else {
-					// 只用缓存的allProducts筛选，不再从DOM取
-					for(var i=0; i<allProducts.length; i++) {
+					// 只用缓存的allProducts筛选，不再从DOM�?					for(var i=0; i<allProducts.length; i++) {
 						var tempDiv = document.createElement('div');
 						tempDiv.innerHTML = allProducts[i];
 						var item = tempDiv.firstElementChild;
@@ -662,17 +398,13 @@
 						}
 					}
 				}
-
-				// 重新渲染产品区
-				$('#product-list').empty();
+				// 重新渲染产品�?				$('#product-list').empty();
 				for(var i=0; i<filtered.length; i++) {
 					$('#product-list').append(filtered[i]);
 				}
 			});
 		});
 		</script>
-
-		<!-- 复制内容脚本 -->
 		<script>
 		$('#copyContactContent').click(function() {
 			var name = $('input[name="name"]').val();
@@ -692,6 +424,8 @@
 			$('#copy-success').fadeIn(200).delay(1200).fadeOut(400);
 		});
 		</script>
-
 	</body>
 </html>
+
+
+
