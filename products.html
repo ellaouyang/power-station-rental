@@ -35,7 +35,7 @@
 						<div class="col-md-12">
 							<div class="header-logo">
 								<a href="#" class="logo">
-									<span style="color: #fff; font-size: 32px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">OFFGRIDMATE</span>
+									<span style="color: #fff; font-size: 32px; font-weight: 700; letter-spacing: 2px;">OFFGRIDMATE - Camping Power Supply</span>
 								</a>
 							</div>
 						</div>
@@ -389,7 +389,7 @@
 				if(category === 'all') {
 					filtered = allProducts;
 				} else {
-					// 只用缓存的allProducts筛选，不再从DOM�?					for(var i=0; i<allProducts.length; i++) {
+					// 只用缓存的allProducts筛选，不再从DOM�?					for(var i=0; i<allProducts.length; i++) {
 						var tempDiv = document.createElement('div');
 						tempDiv.innerHTML = allProducts[i];
 						var item = tempDiv.firstElementChild;
@@ -398,7 +398,7 @@
 						}
 					}
 				}
-				// 重新渲染产品�?				$('#product-list').empty();
+				// 重新渲染产品�?				$('#product-list').empty();
 				for(var i=0; i<filtered.length; i++) {
 					$('#product-list').append(filtered[i]);
 				}
