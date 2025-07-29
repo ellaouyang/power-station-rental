@@ -26,6 +26,29 @@
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 
 		<style>
+			/* 确保footer延伸到页面底部 */
+			#footer .section {
+				padding-bottom: 32px !important;
+			}
+			
+			/* 修复左侧导航栏导致的footer宽度问题 */
+			#footer {
+				width: 100vw !important;
+				margin-left: calc(-50vw + 50%) !important;
+				margin-right: calc(-50vw + 50%) !important;
+			}
+			
+			#footer .section {
+				width: 100% !important;
+				margin: 0 !important;
+			}
+			
+			/* 修复面包屑导航和主标题之间的白色间隔 */
+			#breadcrumb {
+				margin-bottom: 0 !important;
+				padding-bottom: 0 !important;
+			}
+			
 			.scenario-section {
 				padding: 60px 0;
 				background: #f8f9fa;
@@ -297,7 +320,7 @@
 				<div class="container">
 					<ul class="header-links pull-left">
 						<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> offgridmate@hotmail.com</a></li>
 						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
 					</ul>
 				</div>
@@ -346,10 +369,54 @@
 					</div>
 				</div>
 
-				<!-- Short Distance Leisure Camping -->
 				<div class="row">
-					<div class="col-md-12">
-						<div class="scenario-card">
+					<!-- Left Sidebar - Scenario Navigation -->
+					<div class="col-md-3">
+						<div class="scenario-nav" style="position: sticky; top: 20px; background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px;">
+							<h4 style="color: #D10024; font-weight: 700; margin-bottom: 20px; text-align: center;">📋 Scenarios</h4>
+							<ul class="scenario-list" style="list-style: none; padding: 0; margin: 0;">
+								<li style="margin-bottom: 10px;">
+									<a href="#short-distance" class="scenario-link" style="display: block; padding: 10px 15px; background: #f8f9fa; border-radius: 8px; color: #495057; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent;">
+										<span style="font-weight: 600;">🏕️ Short Distance Leisure</span>
+									</a>
+								</li>
+								<li style="margin-bottom: 10px;">
+									<a href="#typical-camping" class="scenario-link" style="display: block; padding: 10px 15px; background: #f8f9fa; border-radius: 8px; color: #495057; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent;">
+										<span style="font-weight: 600;">🏞️ Typical Camping</span>
+									</a>
+								</li>
+								<li style="margin-bottom: 10px;">
+									<a href="#heavy-users" class="scenario-link" style="display: block; padding: 10px 15px; background: #f8f9fa; border-radius: 8px; color: #495057; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent;">
+										<span style="font-weight: 600;">🚐 Heavy Users</span>
+									</a>
+								</li>
+								<li style="margin-bottom: 10px;">
+									<a href="#standard-experience" class="scenario-link" style="display: block; padding: 10px 15px; background: #f8f9fa; border-radius: 8px; color: #495057; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent;">
+										<span style="font-weight: 600;">⚡ Standard Experience</span>
+									</a>
+								</li>
+								<li style="margin-bottom: 10px;">
+									<a href="#custom-solutions" class="scenario-link" style="display: block; padding: 10px 15px; background: #f8f9fa; border-radius: 8px; color: #495057; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent;">
+										<span style="font-weight: 600;">🎯 Custom Solutions</span>
+									</a>
+								</li>
+							</ul>
+							
+							<!-- Booking Button -->
+							<div style="margin-top: 30px; text-align: center;">
+								<button id="bookingBtn" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 16px; font-weight: 600; background: #D10024; border: none; border-radius: 8px; color: white; transition: all 0.3s ease;">
+									📧 BOOKING
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- Main Content -->
+					<div class="col-md-9">
+						<!-- Short Distance Leisure Camping -->
+						<div class="row">
+							<div class="col-md-12">
+						<div class="scenario-card" id="short-distance">
 							<h3 class="scenario-title">Short Distance Leisure Camping</h3>
 							
 							<div class="user-type">
@@ -382,7 +449,7 @@
 										<div class="package-title">Package Prices:</div>
 										<div class="price">3 Days: $65</div>
 										<div class="price">1 Week: $99</div>
-										<div class="price">1 Month: $150</div>
+										<div class="price">2 Weeks: $168</div>
 										
 										<div class="package-title">Individual Prices:</div>
 										<div class="individual-item">
@@ -410,7 +477,7 @@
 										<div class="package-title">Package Prices:</div>
 										<div class="price">3 Days: $89</div>
 										<div class="price">1 Week: $150</div>
-										<div class="price">1 Month: $265</div>
+										<div class="price">2 Weeks: $255</div>
 										
 										<div class="package-title">Individual Prices:</div>
 										<div class="individual-item">
@@ -498,7 +565,7 @@
 				<!-- Typical Outdoor Camping -->
 				<div class="row">
 					<div class="col-md-12">
-						<div class="scenario-card">
+						<div class="scenario-card" id="typical-camping">
 							<h3 class="scenario-title">Typical Outdoor Camping</h3>
 							
 							<div class="user-type">
@@ -524,7 +591,7 @@
 										<div style="margin-bottom: 15px;">
 											<p><strong>Delta 900wh</strong> - AC Max 1400W Output</p>
 											<p><strong>160W Foldable Solar Panel</strong></p>
-											<p><strong>Glacier Outdoor Refrigerator + Battery</strong></p>
+											<p><strong>Glacier Camping Refrigerator + Battery</strong></p>
 										</div>
 										
 										<div class="deposit-note">No deposit required</div>
@@ -532,7 +599,7 @@
 										<div class="package-title">Package Prices:</div>
 										<div class="price">3 Days: $119</div>
 										<div class="price">1 Week: $189</div>
-										<div class="price">1 Month: $395</div>
+										<div class="price">2 Weeks: $321</div>
 										
 										<div class="package-title">Individual Prices:</div>
 										<div class="individual-item">
@@ -557,7 +624,7 @@
 										<div style="margin-bottom: 15px;">
 											<p><strong>Delta Max 1800wh</strong> - AC Max 2200W Output</p>
 											<p><strong>220W Foldable Solar Panel</strong></p>
-											<p><strong>Glacier Outdoor Refrigerator + Battery</strong></p>
+											<p><strong>Glacier Camping Refrigerator + Battery</strong></p>
 										</div>
 										
 										<div class="deposit-note">$800 deposit required</div>
@@ -565,7 +632,7 @@
 										<div class="package-title">Package Prices:</div>
 										<div class="price">3 Days: $169</div>
 										<div class="price">1 Week: $265</div>
-										<div class="price">1 Month: $595</div>
+										<div class="price">2 Weeks: $451</div>
 										
 										<div class="package-title">Individual Prices:</div>
 										<div class="individual-item">
@@ -627,7 +694,7 @@
 													<a href="product.html?id=8"><img src="./img/product08.png" alt="Glacier Refrigerator"></a>
 												</div>
 												<div class="product-body">
-													<h3 class="product-name"><a href="product.html?id=8">Glacier Outdoor Refrigerator + Battery</a></h3>
+													<h3 class="product-name"><a href="product.html?id=8">Glacier Camping Refrigerator + Battery</a></h3>
 													<h4 class="product-price">$20/day</h4>
 													<p style="font-size: 12px; color: #666;">Weight: 24.17kg + 1.9kg | Quick Ice Making</p>
 												</div>
@@ -671,7 +738,7 @@
 				<!-- Heavy Users -->
 				<div class="row">
 					<div class="col-md-12">
-						<div class="scenario-card">
+						<div class="scenario-card" id="heavy-users">
 							<h3 class="scenario-title">Heavy Users (Remote Off-road/Camping Enthusiasts/RV Owners)</h3>
 							
 							<div class="user-type">
@@ -697,8 +764,8 @@
 										<div style="margin-bottom: 15px;">
 											<p><strong>Delta Max 1800wh</strong> - AC Max 2200W Output</p>
 											<p><strong>400W Foldable Solar Panel</strong></p>
-											<p><strong>Glacier Outdoor Refrigerator + Battery</strong></p>
-											<p><strong>Wave Outdoor Air Conditioner + Battery</strong></p>
+											<p><strong>Glacier Camping Refrigerator + Battery</strong></p>
+											<p><strong>Wave Camping Air Conditioner + Battery</strong></p>
 										</div>
 										
 										<div class="deposit-note">$1000 deposit required</div>
@@ -706,7 +773,7 @@
 										<div class="package-title">Package Prices:</div>
 										<div class="price">3 Days: $199</div>
 										<div class="price">1 Week: $355</div>
-										<div class="price">1 Month: $795</div>
+										<div class="price">2 Weeks: $604</div>
 										
 										<div class="package-title">Individual Prices:</div>
 										<div class="individual-item">
@@ -735,33 +802,33 @@
 										<div style="margin-bottom: 15px;">
 											<p><strong>Delta Max 1800wh</strong> - AC Max 2200W Output</p>
 											<p><strong>1700W Gasoline Generator</strong></p>
-											<p><strong>Glacier Outdoor Refrigerator + Battery</strong></p>
-											<p><strong>Wave Outdoor Air Conditioner + Battery</strong></p>
+											<p><strong>Glacier Camping Refrigerator + Battery</strong></p>
+											<p><strong>Wave Camping Air Conditioner + Battery</strong></p>
 										</div>
 										
 										<div class="deposit-note">$1200 deposit required</div>
 										
 										<div class="package-title">Package Prices:</div>
-										<div class="price">3 Days: ¥199</div>
-										<div class="price">1 Week: ¥355</div>
-										<div class="price">1 Month: ¥795</div>
+										<div class="price">3 Days: $199</div>
+										<div class="price">1 Week: $355</div>
+										<div class="price">2 Weeks: $604</div>
 										
 										<div class="package-title">Individual Prices:</div>
 										<div class="individual-item">
 											<span class="item-name">Delta Max</span>
-											<span class="item-price">¥49/day</span>
+											<span class="item-price">$49/day</span>
 										</div>
 										<div class="individual-item">
 											<span class="item-name">Generator</span>
-											<span class="item-price">¥20/day</span>
+											<span class="item-price">$20/day</span>
 										</div>
 										<div class="individual-item">
 											<span class="item-name">Glacier Refrigerator</span>
-											<span class="item-price">¥20/day</span>
+											<span class="item-price">$20/day</span>
 										</div>
 										<div class="individual-item">
 											<span class="item-name">Wave Air Conditioner</span>
-											<span class="item-price">¥20/day</span>
+											<span class="item-price">$20/day</span>
 										</div>
 									</div>
 								</div>
@@ -774,8 +841,8 @@
 											<p><strong>Delta Max 1800wh</strong> - AC Max 2200W Output</p>
 											<p><strong>Delta Max Extension Battery 2000wh</strong></p>
 											<p><strong>1700W Gasoline Generator</strong></p>
-											<p><strong>Glacier Outdoor Refrigerator + Battery</strong></p>
-											<p><strong>Wave Outdoor Air Conditioner + Battery</strong></p>
+											<p><strong>Glacier Camping Refrigerator + Battery</strong></p>
+											<p><strong>Wave Camping Air Conditioner + Battery</strong></p>
 										</div>
 										
 										<div class="deposit-note">$1500 deposit required</div>
@@ -783,7 +850,7 @@
 										<div class="package-title">Package Prices:</div>
 										<div class="price">3 Days: $249</div>
 										<div class="price">1 Week: $425</div>
-										<div class="price">1 Month: $995</div>
+										<div class="price">2 Weeks: $723</div>
 										
 										<div class="package-title">Individual Prices:</div>
 										<div class="individual-item">
@@ -837,7 +904,7 @@
 													<a href="product.html?id=9"><img src="./img/product09.png" alt="Wave Air Conditioner"></a>
 												</div>
 												<div class="product-body">
-													<h3 class="product-name"><a href="product.html?id=9">Wave Outdoor Air Conditioner + Battery</a></h3>
+													<h3 class="product-name"><a href="product.html?id=9">Wave Camping Air Conditioner + Battery</a></h3>
 													<h4 class="product-price">$20/day</h4>
 													<p style="font-size: 12px; color: #666;">Weight: 17.55kg + 7.9kg | 4-6 Hours Usage</p>
 												</div>
@@ -881,7 +948,7 @@
 				<!-- Power Experience & Large Events (No Repetition) -->
 				<div class="scenario-flex-row">
 					<!-- Standard Experience -->
-					<div class="scenario-flex-card">
+					<div class="scenario-flex-card" id="standard-experience">
 						<h3 class="scenario-title" style="margin-bottom:24px;">Standard Power Experience</h3>
 						<a href="product.html?id=1">
 							<img src="./img/product01.png" alt="River Max" style="max-width:180px;display:block;margin:0 auto 10px;">
@@ -893,7 +960,7 @@
 					</div>
 					<div class="scenario-flex-divider"></div>
 					<!-- Custom Solutions / Large Events -->
-					<div class="scenario-flex-card">
+					<div class="scenario-flex-card" id="custom-solutions">
 						<h3 class="scenario-title" style="margin-bottom:24px;">Custom Solutions & Large Events</h3>
 						<div class="user-type" style="width:100%;text-align:center;">
 							<h4 style="margin-bottom:10px;">🔹 Typical Users:</h4>
@@ -901,13 +968,11 @@
 						</div>
 						<div class="equipment-section" style="width:100%;text-align:center;">
 							<h5 style="margin-bottom:10px;">🔹 Customization:</h5>
-							<p>Please contact us for a custom solution based on your total power requirements, preferred devices, and rental period.</p>
+							<p>Please contact us at offgridmate@hotmail.com for a custom solution based on your total power requirements, preferred devices, and rental period.</p>
 						</div>
 					</div>
 				</div>
-				<div style="text-align:center;margin:36px 0 0 0;">
-					<a href="mailto:xx@gmail.com" class="contact-btn">Contact us: xx@gmail.com</a>
-				</div>
+
 
 
 			</div>
@@ -919,18 +984,21 @@
 			<div class="section" style="background:#222;color:#fff;padding:32px 0 0 0;">
 				<div class="container">
 					<div class="row">
+						<!-- About Us -->
 						<div class="col-md-4 col-xs-12" style="margin-bottom:24px;">
 							<h4 style="color:#fff;font-weight:700;">About Us</h4>
 							<p style="color:#ccc;">We provide high-quality power station rental services for outdoor enthusiasts, ensuring your adventure is always powered up.</p>
 						</div>
+						<!-- Contact -->
 						<div class="col-md-4 col-xs-12" style="margin-bottom:24px;">
 							<h4 style="color:#fff;font-weight:700;">Contact</h4>
 							<ul style="list-style:none;padding:0;color:#ccc;">
 								<li><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</li>
 								<li><i class="fa fa-phone"></i> +021-95-51-84</li>
-								<li><i class="fa fa-envelope-o"></i> email@email.com</li>
+								<li><i class="fa fa-envelope-o"></i> offgridmate@hotmail.com</li>
 							</ul>
 						</div>
+						<!-- Terms -->
 						<div class="col-md-4 col-xs-12">
 							<h4 style="color:#fff;font-weight:700;">Terms & Conditions</h4>
 							<ul style="color:#ccc;padding-left:18px;">
@@ -939,6 +1007,7 @@
 								<li>In-store pickup and payment</li>
 								<li>Equipment must be returned in good condition</li>
 							</ul>
+							<button class="btn btn-default btn-xs" data-toggle="modal" data-target="#termsModal" style="margin-top:8px;">View Full Terms</button>
 						</div>
 					</div>
 					<div class="row" style="margin-top:24px;">
@@ -952,6 +1021,48 @@
 			</div>
 		</footer>
 		<!-- /FOOTER -->
+
+		<!-- Terms Modal (与产品详情页复用) -->
+		<div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="termsModalLabel">Complete Rental Terms</h4>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-12">
+								<h5><strong>Terms & Conditions</strong></h5>
+								<ul>
+									<li>Renter must be 18 years or older and provide valid ID</li>
+									<li>Equipment must be properly maintained during rental period</li>
+									<li>Equipment is for personal use only, no subletting or commercial use</li>
+									<li>Pickup available in-store only, advance booking required</li>
+									<li>Payment methods: Cash or bank transfer</li>
+									<li>Rental fees calculated daily, partial days count as full day</li>
+									<li>Please use equipment according to user manual</li>
+									<li>No unauthorized disassembly or modification</li>
+									<li>Contact customer service immediately if equipment malfunctions</li>
+									<li>Equipment must be returned in good condition</li>
+									<li>Repair costs will be charged for any damage</li>
+									<li>Please ensure equipment is fully charged when returning</li>
+									<li>24-hour advance notice required for rental extensions</li>
+									<li>12-hour advance notice required for cancellations</li>
+									<li>Late returns will incur additional fees</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Terms Modal -->
 
 		<!-- jQuery Plugins -->
 		<script type="text/javascript" src="js/jquery.min.js"></script>
@@ -998,6 +1109,95 @@
 						}
 					]
 				});
+				
+				// Smooth scrolling for scenario links
+				$('.scenario-link').on('click', function(e) {
+					e.preventDefault();
+					var target = $(this).attr('href');
+					var offset = 100; // Offset for sticky header
+					
+					$('html, body').animate({
+						scrollTop: $(target).offset().top - offset
+					}, 800);
+					
+					// Update active state
+					$('.scenario-link').css({
+						'background': '#f8f9fa',
+						'border-left-color': 'transparent'
+					});
+					$(this).css({
+						'background': '#D10024',
+						'color': 'white',
+						'border-left-color': '#D10024'
+					});
+				});
+				
+				// Booking button functionality
+				$('#bookingBtn').on('click', function() {
+					// Open email client with pre-filled subject
+					window.location.href = 'mailto:offgridmate@hotmail.com?subject=Power Station Rental Booking Request';
+				});
+				
+				// Highlight current section on scroll
+				$(window).on('scroll', function() {
+					var scrollTop = $(window).scrollTop();
+					var offset = 150;
+					
+					$('.scenario-card, .scenario-flex-card').each(function() {
+						var top = $(this).offset().top - offset;
+						var bottom = top + $(this).outerHeight();
+						
+						if (scrollTop >= top && scrollTop < bottom) {
+							var id = $(this).attr('id');
+							$('.scenario-link').css({
+								'background': '#f8f9fa',
+								'color': '#495057',
+								'border-left-color': 'transparent'
+							});
+							$('a[href="#' + id + '"]').css({
+								'background': '#D10024',
+								'color': 'white',
+								'border-left-color': '#D10024'
+							});
+						}
+					});
+				});
+				
+				// Hover effects for scenario links
+				$('.scenario-link').hover(
+					function() {
+						if (!$(this).hasClass('active')) {
+							$(this).css({
+								'background': '#e9ecef',
+								'transform': 'translateX(5px)'
+							});
+						}
+					},
+					function() {
+						if (!$(this).hasClass('active')) {
+							$(this).css({
+								'background': '#f8f9fa',
+								'transform': 'translateX(0)'
+							});
+						}
+					}
+				);
+				
+				// Booking button hover effect
+				$('#bookingBtn').hover(
+					function() {
+						$(this).css({
+							'background': '#b3001e',
+							'transform': 'scale(1.05)'
+						});
+					},
+					function() {
+						$(this).css({
+							'background': '#D10024',
+							'transform': 'scale(1)'
+						});
+					}
+				);
 			});
 		</script>
 
