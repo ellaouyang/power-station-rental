@@ -58,45 +58,42 @@
 						<h2 class="text-center mb-30">Choose Your Equipment Package by Scenario</h2>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-3">
-						<div class="scenario-nav">
-							<h4>📋 Scenarios</h4>
-							<ul class="scenario-list">
-								<li>
-									<a href="#short-distance" class="scenario-link">
-										<span>🏕️ Short Distance Leisure</span>
-									</a>
-								</li>
-								<li>
-									<a href="#typical-camping" class="scenario-link">
-										<span>🏞️ Typical Camping</span>
-									</a>
-								</li>
-								<li>
-									<a href="#heavy-users" class="scenario-link">
-										<span>🚐 Heavy Users</span>
-									</a>
-								</li>
-								<li>
-									<a href="#standard-experience" class="scenario-link">
-										<span>🎯 Standard Experience</span>
-									</a>
-								</li>
-								<li>
-									<a href="#custom-solutions" class="scenario-link">
-										<span>🎯 Custom Solutions</span>
-									</a>
-								</li>
-							</ul>
-							<div class="text-center">
-								<button id="bookingBtn" class="booking-btn">
-									📧 BOOKING
-								</button>
-							</div>
-						</div>
+				<div class="scenario-nav">
+					<h4>📋 Scenarios</h4>
+					<ul class="scenario-list">
+						<li>
+							<a href="#short-distance" class="scenario-link">
+								<span>🏕️ Short Distance Leisure</span>
+							</a>
+						</li>
+						<li>
+							<a href="#typical-camping" class="scenario-link">
+								<span>🏞️ Typical Camping</span>
+							</a>
+						</li>
+						<li>
+							<a href="#heavy-users" class="scenario-link">
+								<span>🚐 Heavy Users</span>
+							</a>
+						</li>
+						<li>
+							<a href="#standard-experience" class="scenario-link">
+								<span>🎯 Standard Experience</span>
+							</a>
+						</li>
+						<li>
+							<a href="#custom-solutions" class="scenario-link">
+								<span>🎯 Custom Solutions</span>
+							</a>
+						</li>
+					</ul>
+					<div class="text-center">
+						<button id="bookingBtn" class="booking-btn">
+							📧 BOOKING
+						</button>
 					</div>
-					<div class="col-md-9">
+				</div>
+				<div class="scenario-content">
 						<div class="row">
 							<div class="col-md-12">
 						<div class="scenario-card" id="short-distance">
@@ -419,7 +416,7 @@
 										<div class="package-title" style="color: #28a745; font-size: 18px;">Generator Package</div>
 										<div style="margin-bottom: 15px;">
 											<p><strong>Delta Max 1800wh</strong> - AC Max 2200W Output</p>
-											<p><strong>1700W Gasoline Generator</strong></p>
+											<p><strong>1700W Petrol Generator</strong></p>
 											<p><strong>Glacier Camping Refrigerator + Battery</strong></p>
 											<p><strong>Wave Camping Air Conditioner + Battery</strong></p>
 										</div>
@@ -453,7 +450,7 @@
 										<div style="margin-bottom: 15px;">
 											<p><strong>Delta Max 1800wh</strong> - AC Max 2200W Output</p>
 											<p><strong>Delta Max Extension Battery 2000wh</strong></p>
-											<p><strong>1700W Gasoline Generator</strong></p>
+											<p><strong>1700W Petrol Generator</strong></p>
 											<p><strong>Glacier Camping Refrigerator + Battery</strong></p>
 											<p><strong>Wave Camping Air Conditioner + Battery</strong></p>
 										</div>
@@ -518,7 +515,7 @@
 													<a href="product.html?id=10"><img src="./img/product01.png" alt="Generator"></a>
 												</div>
 												<div class="product-body">
-													<h3 class="product-name"><a href="product.html?id=10">1700W Gasoline Generator</a></h3>
+													<h3 class="product-name"><a href="product.html?id=10">1700W Petrol Generator</a></h3>
 													<h4 class="product-price">$20/day</h4>
 													<p style="font-size: 12px; color: #666;">Weight: 29.3kg | High Power Generation</p>
 												</div>
@@ -706,32 +703,92 @@
 						'border-left-color': '#D10024'
 					});
 				});
+				// Initialize active state on page load
+				function updateActiveSection() {
+					var scrollTop = $(window).scrollTop();
+					var offset = 200;
+					var sections = $('.scenario-card, .scenario-flex-card');
+					var currentSection = null;
+					
+					sections.each(function() {
+						var sectionTop = $(this).offset().top - offset;
+						var sectionBottom = sectionTop + $(this).outerHeight();
+						
+						if (scrollTop >= sectionTop && scrollTop < sectionBottom) {
+							currentSection = $(this);
+						}
+					});
+					
+					if (currentSection) {
+						var id = currentSection.attr('id');
+						$('.scenario-link').removeClass('active').css({
+							'background': '#f8f9fa',
+							'color': '#495057',
+							'border-left-color': 'transparent'
+						});
+						$('a[href="#' + id + '"]').addClass('active').css({
+							'background': '#D10024',
+							'color': 'white',
+							'border-left-color': '#D10024'
+						});
+					}
+				}
+				
+				// Call on page load
+				updateActiveSection();
+				
 				// Booking button functionality
 				$('#bookingBtn').on('click', function() {
 					// Open email client with pre-filled subject
 					window.location.href = 'mailto:offgridmate@hotmail.com?subject=Power Station Rental Booking Request';
 				});
-				// Highlight current section on scroll
+				// Highlight current section on scroll with improved detection
 				$(window).on('scroll', function() {
 					var scrollTop = $(window).scrollTop();
-					var offset = 150;
-					$('.scenario-card, .scenario-flex-card').each(function() {
-						var top = $(this).offset().top - offset;
-						var bottom = top + $(this).outerHeight();
-						if (scrollTop >= top && scrollTop < bottom) {
-							var id = $(this).attr('id');
-							$('.scenario-link').css({
-								'background': '#f8f9fa',
-								'color': '#495057',
-								'border-left-color': 'transparent'
-							});
-							$('a[href="#' + id + '"]').css({
-								'background': '#D10024',
-								'color': 'white',
-								'border-left-color': '#D10024'
-							});
+					var windowHeight = $(window).height();
+					var offset = 200; // Increased offset for better detection
+					
+					// Get all scenario sections
+					var sections = $('.scenario-card, .scenario-flex-card');
+					var currentSection = null;
+					
+					sections.each(function() {
+						var sectionTop = $(this).offset().top - offset;
+						var sectionBottom = sectionTop + $(this).outerHeight();
+						
+						// Check if current scroll position is within this section
+						if (scrollTop >= sectionTop && scrollTop < sectionBottom) {
+							currentSection = $(this);
 						}
 					});
+					
+					// If no section is currently in view, find the closest one
+					if (!currentSection) {
+						var minDistance = Infinity;
+						sections.each(function() {
+							var sectionTop = $(this).offset().top - offset;
+							var distance = Math.abs(scrollTop - sectionTop);
+							if (distance < minDistance) {
+								minDistance = distance;
+								currentSection = $(this);
+							}
+						});
+					}
+					
+					// Update active state in sidebar
+					if (currentSection) {
+						var id = currentSection.attr('id');
+						$('.scenario-link').removeClass('active').css({
+							'background': '#f8f9fa',
+							'color': '#495057',
+							'border-left-color': 'transparent'
+						});
+						$('a[href="#' + id + '"]').addClass('active').css({
+							'background': '#D10024',
+							'color': 'white',
+							'border-left-color': '#D10024'
+						});
+					}
 				});
 				// Hover effects for scenario links
 				$('.scenario-link').hover(
@@ -739,7 +796,7 @@
 						if (!$(this).hasClass('active')) {
 							$(this).css({
 								'background': '#e9ecef',
-								'transform': 'translateX(5px)'
+								'transform': 'translateX(3px)'
 							});
 						}
 					},
