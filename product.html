@@ -13,7 +13,32 @@
 		
 		
 		<script>
-		// 产品数据
+		function setBreadcrumb() {
+			const referrer = document.referrer;
+			const breadcrumbSecondLevel = document.querySelector('.breadcrumb-tree li:nth-child(2) a');
+			const urlParams = new URLSearchParams(window.location.search);
+			const fromScenarios = urlParams.get('from');
+			
+			if (breadcrumbSecondLevel) {
+				// Check if coming from scenarios page (either via referrer or URL param)
+				if ((referrer && referrer.includes('scenarios.html')) || fromScenarios === 'scenarios') {
+					breadcrumbSecondLevel.href = 'scenarios.html';
+					breadcrumbSecondLevel.textContent = 'Browse by Scenario';
+				} else {
+					breadcrumbSecondLevel.href = 'products.html';
+					breadcrumbSecondLevel.textContent = 'Products';
+				}
+			}
+		}
+		
+		// Run immediately and also on load to ensure it works
+		document.addEventListener('DOMContentLoaded', setBreadcrumb);
+		window.addEventListener('load', setBreadcrumb);
+		
+		// Also run after a short delay to handle any timing issues
+		setTimeout(setBreadcrumb, 100);
+		setTimeout(setBreadcrumb, 500);
+		
 		const products = [
 		  {
 			id: 1,
@@ -177,7 +202,8 @@
 		  document.getElementById('product-title').innerHTML = product.name;
 		  document.getElementById('product-price').innerHTML = product.price;
 		  document.getElementById('product-desc').innerHTML = product.desc;
-		  // 规格�?		  let specsHtml = '';
+		  // 规格表
+		  let specsHtml = '';
 		  for (let i = 0; i < product.specs.length; i++) {
 			specsHtml += `<tr><th>${product.specs[i][0]}</th><td>${product.specs[i][1]}</td></tr>`;
 		  }
@@ -305,24 +331,7 @@
 					<div class="modal-body">
 						<div class="row">
 							<div class="col-md-12">
-								<h5><strong>Terms & Conditions</strong></h5>
-								<ul>
-									<li>Renter must be 18 years or older and provide valid ID</li>
-									<li>Equipment must be properly maintained during rental period</li>
-									<li>Equipment is for personal use only, no subletting or commercial use</li>
-									<li>Pickup available in-store only, advance booking required</li>
-									<li>Payment methods: Cash or bank transfer</li>
-									<li>Rental fees calculated daily, partial days count as full day</li>
-									<li>Please use equipment according to user manual</li>
-									<li>No unauthorized disassembly or modification</li>
-									<li>Contact customer service immediately if equipment malfunctions</li>
-									<li>Equipment must be returned in good condition</li>
-									<li>Repair costs will be charged for any damage</li>
-									<li>Please ensure equipment is fully charged when returning</li>
-									<li>24-hour advance notice required for rental extensions</li>
-									<li>12-hour advance notice required for cancellations</li>
-									<li>Late returns will incur additional fees</li>
-								</ul>
+								<!-- Terms content will be loaded dynamically -->
 							</div>
 						</div>
 					</div>
@@ -334,6 +343,23 @@
 		</div>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/terms.js"></script>
+		<script>
+		$(document).ready(function() {
+			const referrer = document.referrer;
+			const breadcrumbSecondLevel = $('.breadcrumb-tree li:nth-child(2) a');
+			
+			if (breadcrumbSecondLevel.length > 0) {
+				if (referrer.includes('scenarios.html')) {
+					breadcrumbSecondLevel.attr('href', 'scenarios.html');
+					breadcrumbSecondLevel.text('Browse by Scenario');
+				} else {
+					breadcrumbSecondLevel.attr('href', 'products.html');
+					breadcrumbSecondLevel.text('Products');
+				}
+			}
+		});
+		</script>
 	</body>
 </html>
 
