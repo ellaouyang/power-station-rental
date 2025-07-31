@@ -87,10 +87,20 @@ const TERMS_CONTENT = {
             ]
         },
         {
-            title: "12. Other Provisions",
+            title: "12. Privacy and Personal Information",
             content: [
-                "By renting Equipment, the Customer acknowledges and accepts all terms.",
-                "OffGridMate reserves the right to final interpretation and decision regarding these Terms and Conditions and any disputes arising from the rental."
+                "OffGridMate collects personal information (including name, address, phone number, email, and identification details) strictly for the purposes of:",
+                "<ul><li>processing and administering rental agreements,</li><li>verifying the Customer's identity, and</li><li>recovering lost or damaged equipment or fulfilling legal obligations.</li></ul>",
+                "All personal information is stored securely and retained only as long as necessary for these purposes.",
+                "OffGridMate will not sell, trade, or disclose personal information to third parties except where required by law or necessary to enforce this Agreement.",
+                "The Customer acknowledges and consents to the collection and limited use of their personal information in accordance with this clause."
+            ]
+        },
+        {
+            title: "13. Other Provisions",
+            content: [
+                "By entering into this rental agreement, the Customer confirms that they have read, understood, and accepted all of the above terms and conditions.",
+                "OffGridMate retains the exclusive right of final interpretation of these Terms and Conditions and the resolution of any disputes arising under this Agreement."
             ]
         }
     ]
