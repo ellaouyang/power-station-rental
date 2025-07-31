@@ -416,25 +416,21 @@
 	border-radius: 10px;
 	padding: 20px;
 	margin-bottom: 15px;
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	min-height: 600px; /* 设置最小高度确保一致性 */
 }
 
-.package-card .package-title {
+.package-title {
 	font-weight: 700;
 	color: var(--secondary-color);
 	margin-bottom: 10px;
 }
 
-.package-card .price {
+.price {
 	font-size: 1.2rem;
 	font-weight: 700;
 	color: var(--primary-color);
 }
 
-.package-card .individual-item {
+.individual-item {
 	background: white;
 	border: 1px solid #dee2e6;
 	border-radius: 8px;
@@ -442,17 +438,17 @@
 	margin-bottom: 10px;
 }
 
-.package-card .item-name {
+.item-name {
 	font-weight: 600;
 	color: var(--secondary-color);
 }
 
-.package-card .item-price {
+.item-price {
 	color: var(--primary-color);
 	font-weight: 600;
 }
 
-.package-card .deposit-note {
+.deposit-note {
 	background: #fff3cd;
 	border: 1px solid #ffeaa7;
 	border-radius: 5px;
@@ -460,52 +456,6 @@
 	margin-top: 10px;
 	font-size: 0.9rem;
 	color: #856404;
-	margin-bottom: 15px;
-}
-
-/* 强制所有package cards在同一行具有相同高度 - 只针对scenarios页面 */
-.scenario-card .row .col-md-4 .package-card,
-.scenario-card .row .col-md-6 .package-card {
-	height: 100% !important;
-	display: flex !important;
-	flex-direction: column !important;
-	min-height: 600px !important;
-}
-
-/* 使用CSS Grid确保行内所有卡片高度相等 - 只针对scenarios页面 */
-.scenario-card .row {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.scenario-card .row .col-md-4,
-.scenario-card .row .col-md-6 {
-	display: flex;
-}
-
-/* 更具体的规则来确保package cards高度相等 */
-.scenario-card .row .col-md-4 .package-card,
-.scenario-card .row .col-md-6 .package-card {
-	height: 100% !important;
-	display: flex !important;
-	flex-direction: column !important;
-	min-height: 600px !important;
-}
-
-/* 让Individual Prices部分自动填充剩余空间 */
-.package-card .package-title:last-of-type {
-	margin-top: auto;
-	margin-bottom: 10px;
-}
-
-/* 确保最后一个individual-item没有底部边距 */
-.package-card .individual-item:last-child {
-	margin-bottom: 0;
-}
-
-/* 确保package card的最后一个元素没有底部边距 */
-.package-card > div:last-child {
-	margin-bottom: 0;
 }
 
 .weight-info {
@@ -965,11 +915,11 @@
 	}
 	
 	/* Additional mobile package card improvements */
-	.scenario-card .package-card .col-md-6 {
+	.package-card .col-md-6 {
 		margin-bottom: 15px;
 	}
 	
-	.scenario-card .package-card .col-md-4 {
+	.package-card .col-md-4 {
 		margin-bottom: 15px;
 	}
 	
@@ -1149,8 +1099,8 @@
 	}
 	
 	/* Package card improvements for small mobile */
-	.scenario-card .package-card .col-md-6,
-	.scenario-card .package-card .col-md-4 {
+	.package-card .col-md-6,
+	.package-card .col-md-4 {
 		margin-bottom: 12px;
 	}
 	
