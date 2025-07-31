@@ -102,6 +102,33 @@ const TERMS_CONTENT = {
                 "By entering into this rental agreement, the Customer confirms that they have read, understood, and accepted all of the above terms and conditions.",
                 "OffGridMate retains the exclusive right of final interpretation of these Terms and Conditions and the resolution of any disputes arising under this Agreement."
             ]
+        },
+        {
+            title: "14. Damage & Loss Fee Table",
+            content: [
+                "<div class='table-responsive'><table class='table table-striped table-bordered' style='font-size: 14px; margin-top: 15px;'>" +
+                "<thead class='thead-dark'>" +
+                "<tr>" +
+                "<th style='background: #343a40; color: white; padding: 12px;'>Equipment</th>" +
+                "<th style='background: #343a40; color: white; padding: 12px; text-align: center;'>Retail Price (AUD)</th>" +
+                "<th style='background: #343a40; color: white; padding: 12px; text-align: center;'>Loss or Theft</th>" +
+                "<th style='background: #343a40; color: white; padding: 12px; text-align: center;'>Irreparable Damage</th>" +
+                "<th style='background: #343a40; color: white; padding: 12px; text-align: center;'>Minor Damage</th>" +
+                "</tr></thead><tbody>" +
+                "<tr><td><strong>River Max 500Wh</strong></td><td style='text-align: center;'>$599</td><td style='text-align: center;'>$599</td><td style='text-align: center;'>$450</td><td style='text-align: center;'>$50–100</td></tr>" +
+                "<tr><td><strong>Delta 900Wh</strong></td><td style='text-align: center;'>$1,100</td><td style='text-align: center;'>$1,100</td><td style='text-align: center;'>$850</td><td style='text-align: center;'>$100–200</td></tr>" +
+                "<tr><td><strong>Delta Max 1800Wh</strong></td><td style='text-align: center;'>$1,699</td><td style='text-align: center;'>$1,699</td><td style='text-align: center;'>$1,300</td><td style='text-align: center;'>$150–300</td></tr>" +
+                "<tr><td><strong>Delta Max Extra Battery 2000Wh</strong></td><td style='text-align: center;'>$2,099</td><td style='text-align: center;'>$2,099</td><td style='text-align: center;'>$1,600</td><td style='text-align: center;'>$200–300</td></tr>" +
+                "<tr><td><strong>110W Foldable Solar Panel</strong></td><td style='text-align: center;'>$399</td><td style='text-align: center;'>$399</td><td style='text-align: center;'>$300</td><td style='text-align: center;'>$30–60</td></tr>" +
+                "<tr><td><strong>160W Foldable Solar Panel</strong></td><td style='text-align: center;'>$499</td><td style='text-align: center;'>$499</td><td style='text-align: center;'>$380</td><td style='text-align: center;'>$50–80</td></tr>" +
+                "<tr><td><strong>220W Foldable Solar Panel</strong></td><td style='text-align: center;'>$699</td><td style='text-align: center;'>$699</td><td style='text-align: center;'>$530</td><td style='text-align: center;'>$70–120</td></tr>" +
+                "<tr><td><strong>400W Foldable Solar Panel</strong></td><td style='text-align: center;'>$1,299</td><td style='text-align: center;'>$1,299</td><td style='text-align: center;'>$1,000</td><td style='text-align: center;'>$100–200</td></tr>" +
+                "<tr><td><strong>Glacier Camping Refrigerator + Battery</strong></td><td style='text-align: center;'>$1,300</td><td style='text-align: center;'>$1,300</td><td style='text-align: center;'>$1,000</td><td style='text-align: center;'>$100–200</td></tr>" +
+                "<tr><td><strong>Wave Camping Air Conditioner + Battery</strong></td><td style='text-align: center;'>$1,299</td><td style='text-align: center;'>$1,299</td><td style='text-align: center;'>$1,000</td><td style='text-align: center;'>$100–200</td></tr>" +
+                "<tr><td><strong>1700W Petrol Generator</strong></td><td style='text-align: center;'>$1,899</td><td style='text-align: center;'>$1,899</td><td style='text-align: center;'>$1,400</td><td style='text-align: center;'>$150–300</td></tr>" +
+                "</tbody></table></div>",
+                "<p style='margin-top: 15px; font-size: 13px; color: #666;'><em>Note: All fees are in Australian Dollars (AUD). Minor damage fees are estimates and may vary based on the extent of damage.</em></p>"
+            ]
         }
     ]
 };

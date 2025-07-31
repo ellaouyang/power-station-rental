@@ -1148,3 +1148,92 @@
 		line-height: 1.4;
 	}
 } 
+
+/* Damage & Loss Fee Table Styles */
+.modal-body .table-responsive {
+	margin: 15px 0;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.modal-body .table {
+	margin-bottom: 0;
+	font-size: 13px;
+}
+
+.modal-body .table th {
+	background: #343a40 !important;
+	color: white !important;
+	padding: 12px 8px !important;
+	font-weight: 600;
+	border: none;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.modal-body .table td {
+	padding: 10px 8px;
+	vertical-align: middle;
+	border-color: #dee2e6;
+}
+
+.modal-body .table tbody tr:nth-child(even) {
+	background-color: #f8f9fa;
+}
+
+.modal-body .table tbody tr:hover {
+	background-color: #e9ecef;
+}
+
+.modal-body .table strong {
+	color: #495057;
+	font-weight: 600;
+}
+
+/* Mobile responsive table */
+@media (max-width: 768px) {
+	.modal-body .table-responsive {
+		font-size: 11px;
+	}
+	
+	.modal-body .table th,
+	.modal-body .table td {
+		padding: 8px 4px;
+	}
+	
+	.modal-body .table th {
+		font-size: 10px;
+	}
+	
+	.modal-body .table td {
+		font-size: 10px;
+	}
+	
+	.modal-body .table strong {
+		font-size: 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	.modal-body .table-responsive {
+		font-size: 10px;
+	}
+	
+	.modal-body .table th,
+	.modal-body .table td {
+		padding: 6px 3px;
+	}
+	
+	.modal-body .table th {
+		font-size: 9px;
+	}
+	
+	.modal-body .table td {
+		font-size: 9px;
+	}
+	
+	.modal-body .table strong {
+		font-size: 9px;
+	}
+} 
