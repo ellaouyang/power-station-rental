@@ -2194,3 +2194,68 @@ img {
   height: auto;
   display: block;
 }
+
+/* Product card image consistency */
+.product {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.product .product-img {
+  position: relative;
+  width: 100%;
+  height: 250px; /* Fixed height for all product images */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+.product .product-img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Maintains aspect ratio while fitting in container */
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.product:hover .product-img > img {
+  transform: scale(1.05);
+}
+
+.product .product-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 120px; /* Minimum height for product body */
+}
+
+/* Ensure consistent card heights */
+.product {
+  height: 400px; /* Fixed height for all product cards */
+  margin: 15px 0px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product .product-img {
+    height: 200px;
+  }
+  
+  .product {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product .product-img {
+    height: 180px;
+  }
+  
+  .product {
+    height: 320px;
+  }
+}
