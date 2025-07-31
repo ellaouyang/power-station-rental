@@ -42,37 +42,37 @@
 		const products = [
 		  {
 			id: 1,
-			name: 'River Max 500wh',
+			name: 'River Max 500Wh',
 			price: '$28/3day',
 			img: './img/River Max.jpg',
 			desc: 'Perfect for camping, picnic and outdoor use. Lightweight and easy to carry, supports multiple device charging.',
 			specs: [
 			  ['Capacity', '500Wh'],
-			  ['Output Power', '500W'],
+			  ['Maximum AC Output Power', '500W'],
 			  ['Weight', '7.7kg']
 			]
 		  },
 		  {
 			id: 2,
-			name: 'Delta 900wh',
+			name: 'Delta 900Wh',
 			price: '$39/day',
 			img: './img/Delta.jpg',
 			desc: 'Designed for RV and long trips, long battery life, supports multiple devices.',
 			specs: [
 			  ['Capacity', '900Wh'],
-			  ['Output Power', '1400W'],
+			  ['Maximum AC Output Power', '1400W'],
 			  ['Weight', '14kg']
 			]
 		  },
 		  {
 			id: 3,
-			name: 'Delta Max 1800wh',
+			name: 'Delta Max 1800Wh',
 			price: '$49/day',
 			img: './img/Delta Max.jpg',
 			desc: 'Perfect for outdoor adventure, durable, supports solar charging.',
 			specs: [
 			  ['Capacity', '1800Wh'],
-			  ['Output Power', '2200W'],
+			  ['Maximum AC Output Power', '2200W'],
 			  ['Weight', '21.5kg']
 			]
 		  },
@@ -83,9 +83,8 @@
 			img: './img/Solar Panel.jpg',
 			desc: 'For home/office emergency backup, compact and easy to use.',
 			specs: [
-			  ['Power Output', '110W'],
-			  ['Weight', '3.8kg'],
-			  ['Folded Size', '50x50x4cm']
+			  ['Maximum AC Output Power', '110W'],
+			  ['Weight', '3.8kg']
 			]
 		  },
 		  {
@@ -95,9 +94,8 @@
 			img: './img/Solar Panel.jpg',
 			desc: 'For worksites and outdoor jobs, large capacity, supports high-power tools.',
 			specs: [
-			  ['Power Output', '160W'],
-			  ['Weight', '5.6kg'],
-			  ['Folded Size', '60x60x5cm']
+			  ['Maximum AC Output Power', '160W'],
+			  ['Weight', '5.6kg']
 			]
 		  },
 		  {
@@ -107,9 +105,8 @@
 			img: './img/Solar Panel.jpg',
 			desc: 'For family camping and outdoor parties, safe and reliable, moderate capacity.',
 			specs: [
-			  ['Power Output', '220W'],
-			  ['Weight', '9.5kg'],
-			  ['Folded Size', '70x70x6cm']
+			  ['Maximum AC Output Power', '220W'],
+			  ['Weight', '9.5kg']
 			]
 		  },
 		  {
@@ -119,9 +116,8 @@
 			img: './img/Solar Panel.jpg',
 			desc: 'Lightweight, suitable for short trips and outdoor photography.',
 			specs: [
-			  ['Power Output', '400W'],
-			  ['Weight', '16kg'],
-			  ['Folded Size', '80x80x7cm']
+			  ['Maximum AC Output Power', '400W'],
+			  ['Weight', '16kg']
 			]
 		  },
 		  {
@@ -155,14 +151,14 @@
 			img: './img/Generator.jpg',
 			desc: 'High power generation for extended outdoor activities.',
 			specs: [
-			  ['Power Output', '1700W'],
+			  ['Maximum AC Output Power', '1700W'],
 			  ['Weight', '29.3kg'],
 			  ['Fuel Type', 'Petrol']
 			]
 		  },
 		  {
 			id: 11,
-			name: 'Delta Max Extra Battery 2000wh',
+			name: 'Delta Max Extra Battery 2000Wh',
 			price: '$69/day',
 			img: './img/Delta Max Extra Battery.jpg',
 			desc: 'Ultra high capacity battery extension for Delta Max.',
@@ -191,10 +187,12 @@
 		  document.getElementById('product-title').innerHTML = product.name;
 		  document.getElementById('product-price').innerHTML = product.price;
 		  document.getElementById('product-desc').innerHTML = product.desc;
-		  // 规格表
 		  let specsHtml = '';
 		  for (let i = 0; i < product.specs.length; i++) {
-			specsHtml += `<tr><th>${product.specs[i][0]}</th><td>${product.specs[i][1]}</td></tr>`;
+			const value = product.specs[i][1];
+			if (value !== 'N/A' && value !== 'TBD' && value !== 'N/A' && value.trim() !== '') {
+			  specsHtml += `<tr><th>${product.specs[i][0]}</th><td>${product.specs[i][1]}</td></tr>`;
+			}
 		  }
 		  document.getElementById('product-specs').innerHTML = specsHtml;
 		}
