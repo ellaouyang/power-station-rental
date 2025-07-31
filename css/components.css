@@ -695,12 +695,54 @@
 		margin-bottom: 30px;
 		top: auto;
 		left: auto;
+		float: none;
 	}
 	
 	.scenario-content {
 		margin-left: 0;
 		padding: 0;
 		margin-top: 0;
+	}
+	
+	/* Additional mobile layout improvements */
+	.scenario-section .container {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	
+	.scenario-section .row {
+		margin-left: -7.5px;
+		margin-right: -7.5px;
+	}
+	
+	.scenario-section .col-md-12 {
+		padding-left: 7.5px;
+		padding-right: 7.5px;
+	}
+	
+	/* Improve mobile navigation layout */
+	.scenario-nav {
+		background: #f8f9fa;
+		border: 1px solid #dee2e6;
+		border-radius: 8px;
+	}
+	
+	.scenario-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+	
+	.scenario-list li {
+		flex: 1 1 auto;
+		min-width: 140px;
+	}
+	
+	.scenario-link {
+		text-align: center;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 }
 
@@ -721,5 +763,388 @@
 	}
 	.hero-image {
 		height: 300px;
+	}
+	
+	/* Mobile responsive styles for scenarios page */
+	.scenario-section {
+		padding: 30px 0;
+	}
+	
+	.scenario-card {
+		padding: 20px;
+		margin-bottom: 20px;
+		border-radius: 10px;
+	}
+	
+	.scenario-title {
+		font-size: 1.5rem;
+		margin-bottom: 15px;
+	}
+	
+	.user-type, .equipment-section {
+		padding: 12px;
+		margin-bottom: 15px;
+	}
+	
+	.user-type h4, .equipment-section h5 {
+		font-size: 1rem;
+		margin-bottom: 8px;
+	}
+	
+	.package-card {
+		padding: 15px;
+		margin-bottom: 15px;
+	}
+	
+	.package-title {
+		font-size: 1rem;
+		margin-bottom: 8px;
+	}
+	
+	.price {
+		font-size: 1rem;
+	}
+	
+	.individual-item {
+		padding: 10px;
+		margin-bottom: 8px;
+	}
+	
+	/* Mobile navigation improvements */
+	.scenario-nav {
+		position: static;
+		width: 100%;
+		float: none;
+		margin-right: 0;
+		margin-bottom: 20px;
+		padding: 15px;
+		border-radius: 8px;
+	}
+	
+	.scenario-content {
+		margin-left: 0;
+		padding: 0;
+		margin-top: 0;
+	}
+	
+	.scenario-list li {
+		margin-bottom: 8px;
+	}
+	
+	.scenario-link {
+		padding: 8px 12px;
+		font-size: 0.9rem;
+	}
+	
+	.scenario-link span {
+		font-size: 0.9rem;
+	}
+	
+	.booking-btn {
+		padding: 12px;
+		font-size: 14px;
+		margin-top: 20px;
+	}
+	
+	/* Mobile product slider improvements */
+	.products-slider {
+		margin: 0 -5px;
+	}
+	
+	.product-slide {
+		padding: 0 5px;
+	}
+	
+	.products-slider .slick-prev {
+		left: -15px;
+	}
+	
+	.products-slider .slick-next {
+		right: -15px;
+	}
+	
+	.products-slider .slick-prev,
+	.products-slider .slick-next {
+		width: 30px;
+		height: 30px;
+		font-size: 14px;
+	}
+	
+	/* Mobile flex layout improvements */
+	.scenario-flex-card {
+		min-height: 280px;
+		padding: 24px 20px;
+		margin-bottom: 20px;
+	}
+	
+	.scenario-flex-card h3 {
+		font-size: 1.3rem;
+		margin-bottom: 15px;
+	}
+	
+	.scenario-flex-card img {
+		max-width: 140px;
+		margin-bottom: 8px;
+	}
+	
+	.scenario-flex-card div {
+		font-size: 1rem;
+	}
+	
+	/* Mobile container adjustments */
+	.container {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	
+	/* Mobile header adjustments */
+	.header-logo .logo span {
+		font-size: 16px !important;
+	}
+	
+	/* Mobile footer adjustments */
+	.footer-column {
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	
+	/* Mobile breadcrumb adjustments */
+	.breadcrumb-tree {
+		text-align: center;
+		font-size: 0.9rem;
+	}
+	
+	/* Additional mobile package card improvements */
+	.package-card .col-md-6 {
+		margin-bottom: 15px;
+	}
+	
+	.package-card .col-md-4 {
+		margin-bottom: 15px;
+	}
+	
+	/* Mobile product card improvements */
+	.product .product-img {
+		height: 200px;
+	}
+	
+	.product .product-body {
+		min-height: 100px;
+	}
+	
+	.product .product-name {
+		font-size: 1rem;
+		margin-bottom: 8px;
+	}
+	
+	.product .product-price {
+		font-size: 1.1rem;
+		margin-bottom: 6px;
+	}
+	
+	.product p {
+		font-size: 0.85rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.scenario-section {
+		padding: 20px 0;
+	}
+	
+	.scenario-card {
+		padding: 15px;
+		margin-bottom: 15px;
+	}
+	
+	.scenario-title {
+		font-size: 1.3rem;
+		margin-bottom: 12px;
+	}
+	
+	.user-type, .equipment-section {
+		padding: 10px;
+		margin-bottom: 12px;
+	}
+	
+	.user-type h4, .equipment-section h5 {
+		font-size: 0.9rem;
+		margin-bottom: 6px;
+	}
+	
+	.package-card {
+		padding: 12px;
+		margin-bottom: 12px;
+	}
+	
+	.package-title {
+		font-size: 0.9rem;
+		margin-bottom: 6px;
+	}
+	
+	.price {
+		font-size: 0.9rem;
+	}
+	
+	.individual-item {
+		padding: 8px;
+		margin-bottom: 6px;
+		font-size: 0.85rem;
+	}
+	
+	.scenario-nav {
+		padding: 12px;
+		margin-bottom: 15px;
+	}
+	
+	.scenario-link {
+		padding: 6px 10px;
+		font-size: 0.85rem;
+	}
+	
+	.scenario-link span {
+		font-size: 0.85rem;
+	}
+	
+	.booking-btn {
+		padding: 10px;
+		font-size: 13px;
+		margin-top: 15px;
+	}
+	
+	.products-slider .slick-prev {
+		left: -10px;
+	}
+	
+	.products-slider .slick-next {
+		right: -10px;
+	}
+	
+	.products-slider .slick-prev,
+	.products-slider .slick-next {
+		width: 28px;
+		height: 28px;
+		font-size: 12px;
+	}
+	
+	.scenario-flex-card {
+		min-height: 240px;
+		padding: 20px 15px;
+		margin-bottom: 15px;
+	}
+	
+	.scenario-flex-card h3 {
+		font-size: 1.1rem;
+		margin-bottom: 12px;
+	}
+	
+	.scenario-flex-card img {
+		max-width: 120px;
+		margin-bottom: 6px;
+	}
+	
+	.scenario-flex-card div {
+		font-size: 0.9rem;
+	}
+	
+	/* Extra small mobile adjustments */
+	.container {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	
+	.header-logo .logo span {
+		font-size: 14px !important;
+	}
+	
+	.breadcrumb-tree {
+		font-size: 0.8rem;
+	}
+	
+	/* Modal improvements for mobile */
+	.modal-dialog {
+		margin: 10px;
+	}
+	
+	.modal-body {
+		padding: 15px;
+		max-height: 70vh;
+		overflow-y: auto;
+	}
+	
+	.modal-header {
+		padding: 15px;
+	}
+	
+	.modal-footer {
+		padding: 15px;
+	}
+	
+	/* Additional small mobile improvements */
+	.scenario-list {
+		gap: 6px;
+	}
+	
+	.scenario-list li {
+		min-width: 120px;
+	}
+	
+	.scenario-link {
+		padding: 6px 8px;
+		font-size: 0.8rem;
+	}
+	
+	.scenario-link span {
+		font-size: 0.8rem;
+	}
+	
+	/* Package card improvements for small mobile */
+	.package-card .col-md-6,
+	.package-card .col-md-4 {
+		margin-bottom: 12px;
+	}
+	
+	/* Product card improvements for small mobile */
+	.product .product-img {
+		height: 180px;
+	}
+	
+	.product .product-body {
+		min-height: 90px;
+	}
+	
+	.product .product-name {
+		font-size: 0.9rem;
+		margin-bottom: 6px;
+	}
+	
+	.product .product-price {
+		font-size: 1rem;
+		margin-bottom: 4px;
+	}
+	
+	.product p {
+		font-size: 0.8rem;
+	}
+	
+	/* Header improvements for small mobile */
+	.header-links {
+		font-size: 0.8rem;
+	}
+	
+	.header-links li {
+		margin-right: 8px;
+	}
+	
+	/* Footer improvements for small mobile */
+	.footer-title {
+		font-size: 1rem;
+		margin-bottom: 12px;
+	}
+	
+	.footer-text,
+	.footer-list li {
+		font-size: 0.85rem;
+		line-height: 1.4;
 	}
 } 
