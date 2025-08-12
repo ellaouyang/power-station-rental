@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://offgridmate.com/sitemap.xml
+
+# Allow all pages to be indexed
+Allow: /index.html
+Allow: /products.html
+Allow: /scenarios.html
+Allow: /product.html
+
+# Allow access to CSS, JS, and images
+Allow: /css/
+Allow: /js/
+Allow: /img/
+
+# Disallow access to any potential admin or private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/ 
