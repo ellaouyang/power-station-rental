@@ -19,7 +19,7 @@ const TERMS_CONTENT = {
         {
             title: "3. Rental Fees and Security Deposit",
             content: [
-                "Full rental fee and applicable security deposit ($800–$1,500 depending on package) are due at pickup.",
+                "Full rental fee and applicable security deposit are due at pickup.",
                 "Rental fees are calculated daily; partial days are charged as a full day.",
                 "Deposit will be refunded within 1–3 business days if Equipment is returned in good condition."
             ]
